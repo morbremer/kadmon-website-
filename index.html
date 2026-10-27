@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>kadmon projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/react.production.min.js"></script>
+<script src="assets/react-dom.production.min.js"></script>
+<script src="assets/dc-runtime.js"></script>
+<meta name="hz:slide-selector" content="[data-canvas-width]"><meta name="hz:canvas-width" content="1440"><meta name="hz:canvas-height" content="2300"></head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* latin-ext */
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmmono/v16/aFTU7PB1QTsUX8KYthSQBK6PYK3EXw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/77c99264.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmmono/v16/aFTR7PB1QTsUX8KYvumzEY2tbYf-Vlh3uA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/b201e15d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/cba9b8c3.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/cba9b8c3.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/cba9b8c3.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#F5F3EE}
+a{color:#1E1D1B}a:hover{color:#8A6B3F}
+.yb{display:flex;flex-wrap:wrap;gap:0 32px;border-top:1px solid #1E1D1B;padding:20px 0}
+.yearbtn{flex:0 0 100%;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.yearnum{font-family:"DM Mono",ui-monospace,monospace;font-size:40px;line-height:44px}
+.yearmeta{display:flex;align-items:center;gap:16px;font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#5C5850}
+.allbtn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;background:none;border:0;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer}
+.allbtn:hover span:first-child{text-decoration:underline;text-underline-offset:4px}
+.allbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
+.yearbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
+.yb .rows{margin-left:182px;margin-top:8px}
+.yearcol{flex:0 0 150px}
+.rows{flex:999 1 640px;min-width:0}
+.item{border-bottom:1px solid #DCD7CC}
+.item:last-child{border-bottom:0}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 220px;align-items:start;gap:10px 24px;padding:18px 0;width:100%;background:none;border:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer;box-sizing:border-box}
+.row:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
+.panel{display:flex;flex-wrap:wrap;gap:24px 40px;padding:4px 0 32px}
+.ph{flex:1 1 300px;max-width:440px;aspect-ratio:4/3;background:#E7E3DA;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
+.introbtn{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:44px;padding:12px 0;background:none;border:0;border-top:1px solid #BDB7AB;border-bottom:1px solid #BDB7AB;font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer;text-align:left}
+.introbtn:hover span:first-child{text-decoration:underline;text-underline-offset:4px}
+.introbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
+.gal{flex:1 1 300px;max-width:480px;min-width:0}
+.frame{aspect-ratio:4/3;background:#E7E3DA;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;border:0;padding:0;margin:0;cursor:pointer}
+.frame:focus-visible,.gal:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
+.item{scroll-margin-top:16px}
+.pgrid{display:grid;grid-template-columns:48px minmax(0,1fr);gap:0 8px;align-items:start}
+.pno{font-family:"DM Mono",ui-monospace,monospace;font-size:12px;line-height:28px;letter-spacing:.04em;color:#5C5850}
+.nav{width:44px;height:44px;border-radius:50%;border:1px solid #BDB7AB;background:transparent;color:#1E1D1B;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.ptext{flex:999 1 360px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:640px}
+.pname{min-width:0;display:flex;gap:0;align-items:flex-start}
+.thumb{flex:0 0 150px;width:150px;margin:0 32px 0 -182px;aspect-ratio:4/3;border:1px solid #BDB7AB;box-sizing:border-box;overflow:hidden;display:block}
+.thumb{background-size:cover;background-position:center;background-repeat:no-repeat}
+.strip{display:grid;grid-template-columns:repeat(6, 64px);align-items:center}
+.cell{display:flex;justify-content:center;align-items:center;height:20px}
+.status{width:100%;display:flex;align-items:center;gap:8px;min-height:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.02em;padding:12px 16px;min-height:44px;box-sizing:border-box;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.stats{display:flex;flex-wrap:wrap;gap:24px 56px}
+@media (max-width:760px){
+.colhead .rows{display:none !important}
+.yearcol{flex-basis:100%}
+.yb .rows{margin-left:0}
+.strip{grid-template-columns:repeat(6, 30px)}
+.row{grid-template-columns:minmax(0,1fr)}
+.pgrid{grid-template-columns:36px minmax(0,1fr)}
+.pname{flex-direction:column;gap:12px}
+.thumb{flex:0 0 auto;width:140px;margin:0}
+.hero-title{font-size:44px !important;line-height:48px !important}
+}
+</style>
+</helmet>
+<div style="background: #F5F3EE; color: #1E1D1B; font-family: 'DM Sans', system-ui, sans-serif; min-height: 100vh" data-canvas-width="1440" data-canvas-height="2300" data-document-role="page" data-label="Projects page">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 64px); box-sizing: border-box">
+
+<header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 32px 0">
+<a href="#top" style="text-decoration: none; font-size: 20px; font-weight: 600; letter-spacing: 0.01em">kadmon projects</a>
+<nav aria-label="Main" style="display: flex; gap: 28px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
+<a href="#projects" style="text-decoration: none">PROJECTS</a>
+<a href="mailto:info@kadmonprojects.com" style="text-decoration: none">CONTACT</a>
+</nav>
+</header>
+
+<section id="top" style="padding: 72px 0 56px; display: flex; flex-direction: column; gap: 48px">
+<h1 class="hero-title" style="margin: 0; font-size: 76px; line-height: 80px; font-weight: 500; letter-spacing: -0.025em; max-width: 900px">Making places, since <span style="font-size: 0.86em">2010</span>.</h1>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="max-width: 600px"><button type="button" class="introbtn" aria-expanded="{{introExpanded}}" sc-camel-on-click="{{toggleIntro}}"><span>A note on the projects</span><span aria-hidden="true" style="font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{introSign}}</span></button></div>
+<sc-if value="{{introOpen}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 48px">
+<div style="flex: 1 1 360px; max-width: 600px; min-width: 0; display: flex; flex-direction: column; gap: 16px; font-size: 17px; line-height: 28px; color: #2E2C29">
+<p style="margin: 0">The projects here are all different. Different places, sectors and scales, from open spaces to entire buildings and single floors. Many involve adapting old buildings to new needs. Each has its own goals and needs, but they all deal with the same questions: how places work, how people use them, what brings them together, and what makes them come back.</p>
+<p style="margin: 0">Most bring together different uses in one place, with attention to how they operate day to day and what makes them viable over time.</p>
+<p style="margin: 0">Each project called for a different kind of involvement. Some were developed, built and operated for years. Others involved shaping the concept, defining the vision, planning, or leading the process alongside different teams. Some are large projects that will open in the coming years. Others are still proposals, and some never happened.</p>
+<p style="margin: 0">Many people have been part of these projects over the years, far more than are named here. People who advised, designed, built, operated and managed them. Each brought something of their own and left a mark. In the end, it’s people who make a place. Some became friends and partners, and still are.</p>
+</div>
+<img src="assets/51bd05fb.jpg" alt="Sketch of one building with many uses: work, sport, a café, books and places to sit" style="flex: 1 1 360px; max-width: 640px; min-width: 0; width: 100%; height: auto; display: block; mix-blend-mode: multiply">
+</div>
+</sc-if>
+</div>
+</section>
+
+
+<section id="projects" aria-label="Projects timeline" style="padding-bottom: 96px">
+<div style="display: flex; justify-content: flex-end; padding-bottom: 8px">
+<button type="button" class="allbtn" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><span>{{allLabel}}</span><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">{{allSign}}</span></button>
+</div>
+<div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
+<div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
+<div class="rows" style="display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px 24px; align-items: center; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850">
+<div class="pname">PROJECT</div>
+<div class="status">STATUS</div>
+</div>
+</div>
+<sc-if value="{{dateOpen}}" hint-placeholder-val="false">
+<p id="datenote" style="margin: 0; padding: 0 0 14px; font-size: 13px; line-height: 1.5; color: #5C5850">Dates indicate when a place opened or when work on the project began.</p>
+</sc-if>
+
+<sc-for list="{{years}}" as="yr" hint-placeholder-count="8">
+<div class="yb">
+<button type="button" class="yearbtn" aria-expanded="{{yr.expanded}}" sc-camel-on-click="{{yr.toggle}}">
+<span class="yearnum">{{yr.year}}</span>
+<span class="yearmeta"><span aria-hidden="true" style="font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{yr.sign}}</span></span>
+</button>
+<sc-if value="{{yr.isOpen}}" hint-placeholder-val="{{true}}">
+<div class="rows">
+<sc-for list="{{yr.items}}" as="p" hint-placeholder-count="2">
+<div class="item" id="{{p.slug}}" style="{{p.rowStyle}}">
+<button type="button" class="row" aria-expanded="{{p.expanded}}" sc-camel-on-click="{{p.toggle}}">
+<div class="pname">
+<span class="thumb" aria-hidden="true" style="{{p.thumbStyle}}"></span>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 auto">
+<span class="pn" style="font-size: 22px; line-height: 28px; font-weight: 500">{{p.title}}</span>
+<span style="font-size: 14px; color: #5C5850">{{p.place}}</span>
+</div>
+</div>
+<div class="status">
+<span style="{{p.statusDot}}"></span>
+<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; flex: 1 1 auto">{{p.status}}</span>
+<span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{p.sign}}</span>
+</div>
+</button>
+<sc-if value="{{p.isOpen}}" hint-placeholder-val="{{false}}">
+<div class="panel" style="{{p.panelStyle}}">
+<sc-if value="{{p.hasImages}}" hint-placeholder-val="{{false}}">
+<div class="gal" style="{{p.galStyle}}" sc-camel-tab-index="0" aria-label="Gallery, use the arrow keys to move between images" sc-camel-on-key-down="{{p.galKey}}" sc-camel-on-touch-start="{{touchStart}}" sc-camel-on-touch-end="{{p.touchEnd}}">
+<button type="button" class="frame" aria-label="Next image" sc-camel-on-click="{{p.next}}">
+<img src="{{p.img}}" alt="{{p.imgAlt}}" style="{{p.imgStyle}}">
+</button>
+<div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-top: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; padding-top: 2px">
+<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C5850">{{p.counter}}</span>
+<span style="font-size: 14px; line-height: 20px; color: #2E2C29">{{p.imgAlt}}</span>
+</div>
+<div style="display: flex; gap: 8px; flex: 0 0 auto">
+<button type="button" class="nav" aria-label="Previous image" sc-camel-on-click="{{p.prev}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<button type="button" class="nav" aria-label="Next image" sc-camel-on-click="{{p.next}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+</div>
+</sc-if>
+<div class="ptext">
+<sc-for list="{{p.desc}}" as="para" hint-placeholder-count="3">
+<p style="margin: 0; font-size: 17px; line-height: 27px">{{para.t}}</p>
+</sc-for>
+<div style="margin-top: 10px; padding-top: 16px; border-top: 1px solid #DCD7CC; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #1E1D1B">{{p.tagsLine}}</p>
+<sc-if value="{{p.hasCredits}}" hint-placeholder-val="{{true}}">
+<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; line-height: 20px; color: #5C5850">{{p.credits}}</p>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</section>
+
+<footer style="border-top: 1px solid #1E1D1B; padding: 32px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
+<span style="display: flex; flex-direction: column; gap: 8px"><span>kadmon projects</span><span style="font-size: 12px; color: #5C5850">© 2026 Yoka Projects Ltd. All rights reserved.</span></span>
+<span style="display: flex; gap: 28px; flex-wrap: wrap">
+<a href="mailto:info@kadmonprojects.com" style="text-decoration: none">info@kadmonprojects.com</a>
+</span>
+</footer>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;order&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Newest first&quot;,&quot;Oldest first&quot;],&quot;default&quot;:&quot;Newest first&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#9C7A45&quot;,&quot;#1E1D1B&quot;,&quot;#5F6B4E&quot;,&quot;#7A4A3A&quot;],&quot;default&quot;:&quot;#9C7A45&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2300}}">
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { filter: null, open: null, imgIdx: 0, intro: false, dateNote: false, hover: null, years: {} }; this.slugToName = {}; this.nameToYear = {}; this.nameToSlug = {}; this.mx = 0; this.my = 0; this.pvEl = null; this.tx = null; }
+  componentDidMount() {
+    try {
+      const h = decodeURIComponent((window.location.hash || '').slice(1));
+      const name = h && this.slugToName[h];
+      if (name) this.setState({ open: name, imgIdx: 0, years: { ...this.state.years, [this.nameToYear[name]]: true } });
+    } catch (e) {}
+  }
+  componentDidUpdate(prevProps, prevState) {
+    const cur = this.state.open, was = prevState ? prevState.open : null;
+    if (cur && cur !== was) {
+      const slug = this.nameToSlug[cur];
+      try { history.replaceState(null, '', '#' + slug); } catch (e) {}
+      const el = document.getElementById(slug);
+      if (el) requestAnimationFrame(() => { try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} });
+    } else if (!cur && was) {
+      try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
+    }
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#9C7A45';
+    const order = this.props.order ?? 'Newest first';
+    const filter = this.state.filter;
+    const PH = [
+      { k: 'dev', label: 'Development', short: 'DEV' },
+      { k: 'partner', label: 'Partnership', short: 'PARTNER' },
+      { k: 'concept', label: 'Concept & strategy', short: 'CONCEPT' },
+      { k: 'identity', label: 'Identity', short: 'IDENTITY' },
+      { k: 'plan', label: 'Planning', short: 'PLAN' },
+      { k: 'lead', label: 'Project lead', short: 'LEAD' },
+      { k: 'operate', label: 'Operation', short: 'OPERATE' }
+    ];
+    const BH = ['dev', 'partner', 'concept', 'identity', 'plan', 'operate'];
+    const data = [
+      { y: 2010, name: 'Kolnoa Pe’er', place: 'Yeshayahu Street, Tel Aviv', t: ['dev', 'partner', 'concept', 'plan', 'operate'], s: 'Active' },
+      { y: 2014, name: 'Beit HaKosher Nordau', place: 'Nordau Boulevard, Tel Aviv', t: ['dev', 'partner', 'concept', 'plan', 'operate'], s: 'Closed' },
+      { y: 2015, name: 'Isrotel Publica City Club', place: 'Herzliya Pituach', t: ['concept', 'identity', 'plan', 'operate'], s: 'Active' },
+      { y: 2017, name: 'Beit Hanna Ben Gurion', place: 'Ben Gurion Boulevard, Tel Aviv', t: BH, s: 'Active' },
+      { y: 2021, name: 'Wellbeing Center Talpiot', place: 'Talpiot, Jerusalem', t: ['plan'], s: 'Unrealized' },
+      { y: 2022, name: 'Beit Hanna HaRabi', place: 'HaRabi MiBacharach Street, Florentin, Tel Aviv', t: BH, s: 'Active' },
+      { y: 2022, name: 'Carasso JOMO', place: 'Neve Ofer, Tel Aviv', t: ['concept', 'plan'], s: 'In progress' },
+      { y: 2024, name: 'Beit Hanna Brodetzky', place: 'Brodetzky Street, Old Ramat Aviv, Tel Aviv', t: BH, s: 'Active' },
+      { y: 2023, name: 'Carasso Rival', place: 'Rival and Yad Harutzim, Merhav Shevach, Tel Aviv', t: ['partner', 'concept', 'identity', 'plan', 'lead'], s: 'In progress' },
+      { y: 2023, name: 'Kibbutz Ga’ash Dining Hall', place: 'Kibbutz Ga’ash', t: ['concept', 'plan'], s: 'Unrealized' },
+      { y: 2025, name: 'Kolnoa Smadar', place: 'German Colony, Jerusalem', t: ['concept', 'plan'], s: 'Delivered' },
+      { y: 2026, name: 'Kibbutz Nir Am', place: 'Kibbutz Nir Am, Sha’ar HaNegev', t: ['concept', 'identity', 'plan', 'lead'], s: 'In progress' },
+      { y: 2026, name: 'Shenkar Street Lot, Gav-Yam', place: 'Herzliya Pituach', t: ['concept', 'plan'], s: 'In progress' },
+      { y: 2026, name: 'Beit Berl College', place: 'Beit Berl', t: ['concept', 'plan', 'lead'], s: 'Ongoing' },
+      { y: 2026, name: 'Carasso Beit HaNa’ara', place: 'Hod Hasharon', t: ['concept', 'identity', 'plan'], s: 'In progress' },
+      { y: 2026, name: 'Beit Lincoln', place: 'Lincoln 9, Tel Aviv', t: ['concept', 'identity', 'plan'], s: 'In progress' },
+      { y: 2026, name: 'Union Live Givat Ram', place: 'Givat Ram, Jerusalem', t: ['plan'], s: 'Delivered' },
+      { y: 2026, name: 'HaTachana and the Museum', place: 'Tel Aviv', t: ['concept', 'plan'], s: 'Delivered' }
+    ];
+    const DESC = {
+      'Kolnoa Pe’er': {
+        p: [
+          'A neighborhood cinema opened in 1958 by the Gelfand family as a single large hall. In the 1990s it was divided into five screens under the name Rav-Peer. Like most of the city’s cinemas, it did not survive the move to regional multiplexes. The last screening was in 2007, and the building then served as a warehouse.',
+          'In 2010 it reopened as a local gym and kept the name Kolnoa Pe’er. The brand draws on school gyms and school T-shirts rather than the usual fitness look. The plan follows the existing building: the galleries overlook the main space, studios were added, and the equipment levels follow the slope of the auditorium.',
+          'It has operated continuously since 2010.'
+        ],
+        c: 'Developer: Reuven Ella and partners  |  Architecture: Michael Azoulay, Mickey Slonim  |  Logo and graphic identity: Rotem Shavit, Four',
+        img: [
+          { src: '/_blob/2ce11c7fce1eb8330484d3e1b1b1f1b2', alt: 'Kolnoa Pe’er as a cinema, archival photograph', fit: 'cover' },
+          { src: '/_blob/412b4cbbeb4cdf4a8f14b63f46414f74', alt: 'The building today, with the Kolnoa Pe’er fitness club sign', fit: 'cover' },
+          { src: '/_blob/1e1e56fb82bcf014dcafd53c0df504f5', alt: 'Main training floor under the original roof trusses, with the glass gallery above', fit: 'cover' },
+          { src: '/_blob/be6fccfa2e6885c2fbd010cbd70c4f2a', alt: 'Entrance and studios, signed after the surrounding streets', fit: 'cover' },
+          { src: '/_blob/121deea93350d5e8c60ece02821a9936', alt: 'Stairwell with a retro mural', fit: 'contain' },
+          { src: '/_blob/aafbf246f441d22be7cfcce5aafd76e2', alt: 'Reception desk', fit: 'contain' },
+          { src: '/_blob/04b301cd51430e9153babc0db971459b', alt: 'The stairwell mural being painted', fit: 'contain' }
+        ]
+      },
+      'Beit HaKosher Nordau': {
+        p: [
+          'The Gur Hasidic synagogue at 65 Nordau Boulevard, abandoned and bought by developers to build housing. Until the permits came through, it was used as a fitness studio center.',
+          'One place for several types of training, functional, spinning and yoga, among the first in the city to combine them. The structure was left untouched: the prayer hall became the main training floor, reception sat in the women’s gallery, the rabbi’s room in the basement became a spinning room that screened live concerts, and yoga moved to the roof.',
+          'It ran for several years as a profitable business. The residential building now stands on the site.'
+        ],
+        c: 'Developer: Reuven Ella and partners  |  Interior design: Mickey Slonim  |  Logo: Awesome',
+        img: [
+          { src: '/_blob/3fec83504a70adf654addb419db4d9a3', alt: 'The former Gur synagogue at 65 Nordau Boulevard with the Beit HaKosher Nordau sign', fit: 'cover' },
+          { src: '/_blob/c03d2f081616d6e2b2429f67af30691a', alt: 'TRX straps along the tall windows of the former prayer hall', fit: 'cover' },
+          { src: '/_blob/f6a528f4400cf25bdf753f9374c7528e', alt: 'Beit HaKosher Nordau logo', fit: 'contain' }
+        ]
+      }
+    };
+    DESC['Beit Hanna Ben Gurion'] = {
+      p: [
+        'In 1926 Hanna Chizik founded the Northern Women Workers’ Farm here, an agricultural training farm where young women studied, worked and lived. Its Bauhaus building was designed by Yaakov Pinkerfeld in 1935 and named Beit Hanna in 1951. Later it housed a school for girls, then a series of cafés and a parents and children center, until it stood empty. In 2013 it was bought by social entrepreneur Roni Douek.',
+        'Here The Third Place Ltd was founded, owned by Roni Douek in partnership with Kadmon. The idea was “the new matnas”: the neighborhood community center, updated for today’s needs, with a more modern design, and run by a private company. One place for the neighborhood combining sport, content and meeting. It holds studios for pilates, yoga and strength training, a cafeteria, programs for new mothers and babysitting. It runs on memberships, single entries, classes, workshops, courses and events. The courtyard, a private space open to the public, hosts events, markets, exhibitions and open-air screenings.',
+        'It opened in July 2017, draws hundreds of visitors a day, and was the first of three Beit Hanna branches.'
+      ],
+      c: 'Developer: The Third Place Ltd (Roni Douek, in partnership with Kadmon)  |  Original architecture: Yaakov Pinkerfeld  |  Conservation: Yoav Messer  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo: Rotem Shavit, Dafna Altman',
+      img: [
+        { src: '/_blob/1719081c7f233464c0516765f2d07b0e', alt: 'The original building, archival photograph', fit: 'cover' },
+        { src: '/_blob/23343ef1efe609a084e327866aef74e3', alt: 'Women at work in the sewing workshop, archival photograph', fit: 'cover' },
+        { src: '/_blob/09aea21e11404f80ee9ae069a8ba5783', alt: 'The restored building and courtyard at dusk', fit: 'cover' },
+        { src: '/_blob/3e96d8c854cca7c12eecd371a823cdf7', alt: 'Entrance and café terrace', fit: 'cover' },
+        { src: '/_blob/b6f370fcd0d634970f7f712a950491e0', alt: 'An evening event in the courtyard', fit: 'cover' },
+        { src: '/_blob/dbb3576dcdb33221032c78487d10b0dc', alt: 'Training and drawing in the garden', fit: 'cover' },
+        { src: '/_blob/13ae0662b99a7c9ab418a610af72a529', alt: 'A barre class in the studio', fit: 'cover' },
+        { src: '/_blob/34d2cbab970499b94557af49cfe70c0f', alt: 'The covered roof terrace', fit: 'cover' },
+        { src: '/_blob/fc0dfe92cdf0e47bf8dd2027f97d5da2', alt: 'A watercolor workshop', fit: 'contain' },
+        { src: '/_blob/9f5fb280806ba11660ff4e7c334aff02', alt: 'A lounge corner with exposed brick', fit: 'contain' },
+        { src: '/_blob/d2c164c7b0349b3d496f6a73ac64736c', alt: 'Changing room washbasins', fit: 'cover' },
+        { src: '/_blob/df1ec03eb0b80909bd97a583d1c4ad8d', alt: 'The Beit Hanna sign above the entrance', fit: 'cover' },
+        { src: '/_blob/1ade1fccee85ca47d42ffb99d4c59ec7', alt: 'The white facade against the sky', fit: 'cover' },
+        { src: '/_blob/d856f2c257f067dd81e0a0ac4bedf50b', alt: 'The courtyard palm', fit: 'contain' },
+        { src: '/_blob/399401944f35a48472dfa604bf0a41fb', alt: 'Beit Hanna logo', fit: 'contain' }
+      ]
+    };
+    DESC['Beit Hanna HaRabi'] = {
+      p: [
+        'An industrial building from the 1950s in Florentin’s small-workshop district, first a loudspeaker workshop and later a family-owned textile factory. Three and a half floors, high ceilings, many windows and an inner courtyard, on a street with hardly any movement.',
+        'The second Beit Hanna. The building was exposed rather than covered, to fit the neighborhood instead of standing out in it. It holds studios, a lounge, a green roof, a ceramics room, a café with student-style seating and meeting rooms, with changing programming. It runs on memberships, single entries, classes, workshops, courses and events.',
+        'It opened in May 2022. A street that hardly anyone walked through became a new destination for people from across the city, and more businesses have since opened nearby.'
+      ],
+      c: 'Developer: The Third Place Ltd  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo and graphic identity: Eyal Eliezer'
+    };
+    DESC['Carasso JOMO'] = {
+      p: [
+        'A new Carasso residential development in Neve Ofer, with retail on the ground floor.',
+        'Work on the ground-floor plan: what kind of retail fits the project and the neighborhood, how to set the retail mix for a building that is not yet built, and how to divide the space into retail units.'
+      ],
+      c: 'Developer: Carasso Real Estate  |  Content and graphics: Bar De Langa  |  Branding: Brave'
+    };
+    const TITLES = {
+      'Kolnoa Pe’er': 'Kolnoa Pe’er, a cinema converted into a local gym',
+      'Beit HaKosher Nordau': 'Beit HaKosher Nordau, a former synagogue transformed into a fitness sanctuary',
+      'Isrotel Publica City Club': 'Isrotel Publica, hotel public spaces opened to the neighborhood',
+      'Beit Hanna Ben Gurion': 'Beit Hanna Ben Gurion, a 1930s Bauhaus building converted into a community center',
+      'Beit Hanna HaRabi': 'Beit Hanna HaRabi, a textile factory converted into a community center',
+      'Carasso JOMO': 'Carasso JOMO, ground-floor retail planning for a residential project',
+      'Carasso Rival': 'Carasso Rival, a campus built around a historic garage',
+      'Beit Hanna Brodetzky': 'Beit Hanna Brodetzky, a 1960 cinema turned into an everyday local culture house',
+      'Kolnoa Smadar': 'Kolnoa Smadar, a proposal to turn the cinema into a house for the public',
+      'HaTachana and the Museum': 'HaTachana & Batei HaOsef, connecting two historic compounds to each other and to the city through everyday public uses',
+      'Beit Berl College': 'Beit Berl College, a master plan to open the campus to the public',
+      'Kibbutz Nir Am': 'Developing a hospitality and community venture',
+      'Shenkar Street Lot, Gav-Yam': 'The Hide Line, from isolation to destination: Gav-Yam’s hidden parking lot',
+      'Beit Lincoln': 'Beit Lincoln, a floor and a rooftop for working, training and unwinding in the old Mekorot building',
+      'Carasso Beit HaNa’ara': 'Hadarim, identity and shared spaces for a new neighborhood by Carasso',
+      'Kibbutz Ga’ash Dining Hall': 'Kibbutz Ga’ash, a proposal for the old dining hall',
+      'Union Live Givat Ram': 'Union Live Givat Ram, programming the amenities of a rental community',
+      'Wellbeing Center Talpiot': 'Wellbeing Center Talpiot, a proposal for a daily center in a municipal building'
+    };
+    DESC['Beit Hanna Brodetzky'] = {
+      p: [
+        'The building was first planned in the 1950s as a beit am, a community house for the neighborhood, and opened in 1960 as the Ramat Aviv Cinema, in the commercial center of Old Ramat Aviv. In the early 1980s it was renamed Tamuz Cinema and closed a few years later. It then housed the Koteret journalism school and stood empty for a while. In the years before Beit Hanna it was a Haredi yeshiva, closed to the public.',
+        'The third Beit Hanna. The building was opened to the public again and returned to its original purpose, a house for the people of the neighborhood: a local culture house for everyday use, with screenings again, pilates, ceramics classes, events and programming. It runs on memberships, single entries, classes, workshops, courses and events, and it has changed how the old Brodetzky commercial center looks and feels.'
+      ],
+      c: 'Developer: The Third Place Ltd  |  Original architecture: Robert Bennett  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo and graphic identity: Eyal Eliezer',
+      img: [
+        { src: '/_blob/0163b08e72b2f04f4c4bd2bf1c2db8ad', alt: 'The building before the renovation', fit: 'cover' },
+        { src: '/_blob/9c21d5e99e1c6b8b71a56f0663f8f0f6', alt: 'The back of the building and the steps to the commercial center, before', fit: 'cover' },
+        { src: '/_blob/e4a4b82b6854c27c3eba06f642adcff5', alt: 'The main hall in the yeshiva years', fit: 'cover' },
+        { src: '/_blob/bdbe5cd9439364984a865a50f5279ff4', alt: 'The old cinema hall during the works', fit: 'cover' },
+        { src: '/_blob/50819936da4b17ea6af5825516ec0994', alt: 'The lounge and the gallery today', fit: 'cover' },
+        { src: '/_blob/1377f264b155111c534132cf098cba71', alt: 'The lounge from above', fit: 'cover' },
+        { src: '/_blob/7eb4d55767b1414842a74b2d09d29c19', alt: 'An ordinary day in the lounge', fit: 'cover' },
+        { src: '/_blob/8a7969f2a431fc4c65582022f2fdf967', alt: 'Low seating along the slanted wall', fit: 'cover' },
+        { src: '/_blob/4f62dac7a0eabae6f062d21d54dafefe', alt: 'The ceramics room', fit: 'cover' },
+        { src: '/_blob/94443866f760a49222c2d25753a17529', alt: 'A pilates class', fit: 'cover' }
+      ]
+    };
+    DESC['Carasso Rival'] = {
+      p: [
+        'A Carasso Real Estate development on 13 dunams in Merhav Shevach, south Tel Aviv: three towers of offices, housing and a hotel, about 158,000 sqm, around a preservation building. The building holds the Carasso company offices, built in 1958 around the family garage that opened on the site in 1947.',
+        'All the amenities of the compound are brought together in the preservation building, named Garage Carasso after the historic garage and Moshe Carasso. The compound becomes a campus that serves the people who live and work in it: fitness and wellbeing, retail and food, work spaces, culture and events, crafts and hospitality, open to the city as well. The aim is a landmark at the scale of the city.',
+        'The work covers the program, architectural planning, concept, operating model and economic model, with a future partnership in operating the garage. Construction is expected to begin in 2032.'
+      ],
+      c: 'Developer: Carasso Real Estate  |  Architecture: Yaski Mor Sivan Architects  |  Interior design, preservation building: Dan Troim  |  Landscape: Tzur Wolf  |  Content and graphics: Bar De Langa'
+    };
+    DESC['Carasso Beit HaNa’ara'] = {
+      p: [
+        'A Carasso residential project in Hod Hasharon: 17 buildings on four lots, with apartments for sale. The project is planned as one neighborhood rather than a group of buildings.',
+        'The starting point was the question of what people need in the place they live, beyond a roof over their heads: belonging, safety, freedom, meeting, play and quiet. The answer led to an identity based on the Israeli neighborhood of the past and on childhood memories, adapted to life today. From it came the project’s product strategy and positioning. The amenity spaces are planned as a platform for people to meet, through everyday uses that fit the way people live now.'
+      ],
+      c: 'Developer: Carasso Real Estate',
+      img: [
+        { src: '/_blob/cb59021c46a532f80be839395af84049', alt: 'Rendering: the neighborhood from across the water', fit: 'cover' },
+        { src: '/_blob/049a5d7019a69eb8cacb711d420b13f7', alt: 'Rendering: the residents’ gym', fit: 'cover' },
+        { src: '/_blob/193736fdc09c1b2a087109d436bbf650', alt: 'Rendering: the residents’ lounge and kitchen', fit: 'cover' }
+      ]
+    };
+    DESC['Wellbeing Center Talpiot'] = {
+      p: [
+        'A municipal property in a new building in Talpiot, Jerusalem.',
+        'A proposal to Eden, the Jerusalem economic development company, for a daily center with a range of uses: sport, learning spaces, exhibitions and space rentals.'
+      ],
+      c: 'Developer: Eden, the Jerusalem Economic Development Company Ltd',
+      img: [
+        { src: '/_blob/7c0b29caaabdff9e94008ae08ca98b95', alt: 'The municipal space under construction in Talpiot', fit: 'cover' }
+      ]
+    };
+    DESC['Kolnoa Smadar'] = {
+      p: [
+        'The oldest cinema in Jerusalem still in operation, built in 1928 in the German Colony in a distinctive Art Deco style. Over the years it changed names and owners. In 2024, under threat of closure and sale, the Smadar Initiative, a public-benefit initiative, was founded to keep it alive and open, and to preserve the liberal character of the area.',
+        'Beit Smadar is a proposal for the initiative to turn the cinema into a house for the city’s liberal public: a multi-purpose hall for film, theater, performances and conferences, a café, a library and workspaces, workshops, meeting rooms and a studio. It included the program, the planning and an economic model that lets the place sustain itself.'
+      ],
+      c: 'Initiators: Roni Ayalon, Rotem Ariav (the Smadar Initiative)  |  Architecture: Studio Dan Troim  |  Economic consulting: Asaf Bilsky  |  Graphic design: Studio Idit-Anat',
+      img: [
+        { src: '/_blob/9ac2453e507db93c5308fffc35f4c9a0', alt: 'Kolnoa Smadar, historical photo', fit: 'cover' },
+        { src: '/_blob/75156a85f080383546d6049fb7e67458', alt: 'Plan: entrance floor and cinema hall', fit: 'contain' },
+        { src: '/_blob/aa2c5986c8bf08df62d1b0fe30107376', alt: 'Plan: middle floor and roof terrace', fit: 'contain' }
+      ]
+    };
+    DESC['Shenkar Street Lot, Gav-Yam'] = {
+      p: [
+        'Gav-Yam wants to develop the rear parking lot of its office complex on Shenkar Street, in the south of the Herzliya Pituach industrial area, into an accessible, public place: one that serves its tenants and is also open to the public, with attention to sustainability and to its surroundings.',
+        'The concept, The Hide Line, draws movement up from the lower level of Shenkar Street to the upper parking level, through a set of structural elements: shading, planting, stairs and pavilions. The approach is engineering rather than design. The original plan for the complex was also reviewed, and the public open space it set out turned out to still be relevant.',
+        'The program is based on the company’s needs: conferences, receptions and the many events it produces for its tenants, alongside a café and garden, an outdoor gym and space for flexible work. It also creates new sources of income and adds value to the property.'
+      ],
+      c: 'Developer: Gav-Yam  |  Original architecture: Moshe Tzur  |  Architecture: Nir Leshem',
+      img: [
+        { src: '/_blob/2a8b0c1c0a89df91a48a5c9e103483dc', alt: 'Rendering: the rear side of the complex in the evening', fit: 'cover' },
+        { src: '/_blob/1d5f9e1152ea966caf4af6ed08095039', alt: 'Rendering: tables under a planted canopy', fit: 'cover' },
+        { src: '/_blob/ea03c881e8d8d8b38f29472cd0246ee4', alt: 'Rendering: the entrance plaza', fit: 'cover' },
+        { src: '/_blob/a4e418d951eadd3420eec876c328f77c', alt: 'Rendering: seating stairs', fit: 'cover' },
+        { src: '/_blob/b21e0be3696d55941c1761cdc07e1379', alt: 'Rendering: the café and garden', fit: 'cover' },
+        { src: '/_blob/a35c5984046edce4df230244e6e709bc', alt: 'Rendering: the podium on the intermediate level', fit: 'cover' },
+        { src: '/_blob/3045ccffc8a3df278b6545c143444110', alt: 'Rendering: a green buffer along the parking strip', fit: 'cover' },
+        { src: '/_blob/6ff061d5a3126afa6bc4d9b1c6dcbadd', alt: 'Rendering: the rock', fit: 'cover' },
+        { src: '/_blob/4fc91c75c962361eaf8576c44fa85613', alt: 'Rendering: a greenhouse pavilion as a gym', fit: 'cover' },
+        { src: '/_blob/9e86d672480f3ff31ca48711cf13ff55', alt: 'Rendering: a greenhouse pavilion for flexible work', fit: 'cover' },
+        { src: '/_blob/b0031dc175565f60b2b499435e2ef8e8', alt: 'Rendering: a greenhouse pavilion for events', fit: 'cover' },
+        { src: '/_blob/405e88fbc0c086c1cdac279f50420968', alt: 'Rendering: an evening event in the plaza', fit: 'cover' }
+      ]
+    };
+    DESC['Beit Berl College'] = {
+      p: [
+        'Beit Berl Academic College sits on a green campus in the heart of the Sharon, founded on an idea that joins education, community and public action. Like many campuses, it faces a changing reality: remote learning, fewer people staying on campus through the day, growing competition for students, and buildings that are only partly used or stand empty.',
+        'Working alongside the college management, the project rethinks the role of the academic space: from an institution that grants degrees to an open, connected place where academia, civic action and community meet, active through the day, in the evenings and all year round. The campus opens to students, staff, people from the area and organizations, through content, services and spaces offered to the public.',
+        'The work began with mapping the campus, a general program, recommendations, a presentation to the board of directors and a film to show the vision. It continued to a master plan for developing the assets, the content and an operating model. The first project is the old library, at the heart of the campus, planned as a multi-purpose house for culture, learning and creation and as a pilot for the whole plan. Alongside it are programs for other compounds, such as Kalmania as a place to stay and learn, and economic models for putting existing buildings to use.',
+        'The goals: more life on campus, a richer student experience, new audiences and students, more varied sources of income, and a stronger standing for the college as a center of knowledge and civic action.'
+      ],
+      c: 'Developer: Beit Berl College  |  Software and campus mapping: Mor Bremer'
+    };
+    DESC['Beit Lincoln'] = {
+      p: [
+        'An office building from the 1960s on Lincoln Street, designed by Rapoport, Gliberman and Frankel, and for decades the headquarters of Mekorot, the national water company. It was among the first buildings in Tel Aviv planned for mixed use, with shops at street level and parking and offices above. Its original name, Beit Lincoln, was brought back as the name of the place.',
+        'A whole floor and the roof are planned as a place open to the public that also serves the tenants of the office building: a multi-purpose lounge for meeting and work, spaces for fitness and training, and a roof terrace for wellness and for spending time. The identity draws on the Tel Aviv of the past.',
+        'The work covers the concept, the name and identity, guidelines for the interior designers, renderings and the graphic images of the identity.'
+      ],
+      c: 'Original architecture: Rapoport, Gliberman and Frankel  |  Interior design: Eli HaCohen'
+    };
+    DESC['Isrotel Publica City Club'] = { p: [
+        'Isrotel Publica, a hotel in Herzliya Pituach. The idea was to take the hotel’s public spaces, expand them and open them to the public through memberships and single entries.',
+        'The club holds a gym, a boxing ring, a multi-purpose studio, a spinning room, saunas and more. Members also use a workspace and the rooftop pool. It connects hotel guests with people from the area, and gives tourists a local experience.',
+        'It has been running since 2015, and has helped the hotel’s guest ratings.'
+      ], c: 'Developer: Isrotel Hotels and Reuven Ella  |  Interior design: Studio Dana Oberson  |  Logo and graphic identity: Studio Roof, Alon Drai' };
+    DESC['Union Live Givat Ram'] = { p: [
+        'A residential complex in Givat Ram, Jerusalem, mostly for long-term managed rental. When people rent and stay for years, the shared spaces are part of what they rent.',
+        'The work was a program of uses for the shared spaces: who they are for, what each space holds, what the management fee includes and what is paid for, and what each space takes to build and run.'
+      ], c: 'Developer: Union Live' };
+    DESC['Kibbutz Ga’ash Dining Hall'] = {
+      p: [
+        'The old dining hall of Kibbutz Ga’ash, about 1,400 sqm, once the center of kibbutz life. Like many kibbutzim, Ga’ash has changed in recent years and draws new, young and varied residents, while keeping the wish for a shared, village-like way of life.',
+        'The aim was a concept that supports the welfare and community life of kibbutz members, in a model that pays for itself through people from outside the kibbutz. A third place for the kibbutz and the region: one building with sport, food, work and community, for members, families, young people, people who work from home and visitors. The work covered an early program, the uses for each floor and the principles of an economic model. The spatial planning took into account the balance between opening the place to people from outside and the members’ daily life.',
+        'The work was at an early stage. The events of October 7 stopped the process, and the project did not go ahead.'
+      ],
+      c: 'Developer: Kibbutz Ga’ash  |  Planning and planning lead: Rotem Shevchenko'
+    };
+    DESC['Kibbutz Nir Am'] = {
+      p: [
+        'Kibbutz Nir Am, in the Western Negev near Sderot, one of the Otef communities attacked on October 7, 2023. On the kibbutz’s land, a hospitality, culinary and community venture is being developed to support the renewal and resilience of the region: jobs, local producers and businesses, sustainable tourism and a stronger local community.',
+        'The idea is a hotel that is also a public place. Next to the rooms: a restaurant, a café and a market for local produce, studios for movement and wellness, workshops for art and crafts, and a greenhouse pavilion for events, markets and gatherings. A daily routine for the people of the area, which guests join while they stay.',
+        'The work covers leading and coordinating the project: the concept and vision, the program and mix of uses, regional research, the business model and financial plan, the name and brand direction, the investor presentation, coordinating the architect and the consultants, and finding operating partners.'
+      ],
+      c: 'Developer: Bonei HaOtef Ltd  |  Architecture: Studio Dana Oberson, Oded Livyatan, Mai and Tomer  |  Economic consulting: Boaz Melnik  |  Hotel consulting: Michael Hay, Shai Zelering'
+    };
+    DESC['HaTachana and the Museum'] = {
+      p: [
+        'HaTachana, Jaffa’s first railway station, and next to it the Batei HaOsef museum compound, which operated for years as a fenced, closed area. Together, 49 buildings and about 12,300 sqm that sat side by side but never worked as one place.',
+        'A conceptual proposal and development directions, prepared together with Atarim, the Tel Aviv-Yafo municipal company that manages the site, and its consultants. The work covered mapping the site, a program of uses based on the zoning plan, mostly public with a commercial part, the mix of uses, proposals for reusing the special buildings, and renderings. The compound has not yet been renovated.'
+      ],
+      c: 'Developer: Atarim  |  Content and graphics: Bar De Langa  |  Architectural assistance: Nadav Heifert',
+      img: [
+        { src: '/_blob/55baf22d1b629b597179721b3110159c', alt: 'Jaffa railway station, 1902, archival photograph', fit: 'cover' },
+        { src: '/_blob/59fc8b663edd5ba7ff1c5ac3358d7cbe', alt: 'Sketch of the station as an open public space', fit: 'cover' },
+        { src: '/_blob/e8185a52561a5c093868953fe14463e6', alt: 'Sketch of everyday life along the old platform', fit: 'contain' },
+        { src: '/_blob/fe48eb10efb3c92adc7ca1e9723f7b66', alt: 'Site map of public and commercial uses across both compounds', fit: 'contain' },
+        { src: '/_blob/cb10256c3d8d5bd811b9723d8c2817a1', alt: 'Rendering: a local market under a restored shed', fit: 'cover' },
+        { src: '/_blob/bd5a0f42a694b4649306f1419b1ea6fd', alt: 'Rendering: an exhibition opening at a restored building', fit: 'cover' },
+        { src: '/_blob/06141f769a94d6d32ec5ac2fd01dcf63', alt: 'Rendering: a movement studio in a small building', fit: 'cover' },
+        { src: '/_blob/441d483e5b924f11ab2d90815a826a82', alt: 'Rendering: a craft workshop opening onto the garden', fit: 'cover' },
+        { src: '/_blob/436bd5fcd7b38a96c2382efa470f7236', alt: 'Rendering: an evening event along the tracks', fit: 'cover' }
+      ]
+    };
+    const open = this.state.open;
+    const statusDot = (s) => {
+      const base = 'width: 8px; height: 8px; border-radius: 50%; display: block; box-sizing: border-box; flex: 0 0 auto;';
+      if (s === 'Active') return base + ' background: #1E1D1B;';
+      if (s === 'In progress' || s === 'Ongoing' || s === 'Under construction') return base + ' background: ' + accent + ';';
+      return base + ' border: 1.5px solid #8A857B;';
+    };
+    const dotOn = 'width: 14px; height: 14px; border-radius: 50%; display: block; background: ' + accent + ';';
+    const dotOwn = 'width: 14px; height: 14px; border-radius: 50%; display: block; background: #1E1D1B;';
+    const slugify = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    const noMap = {};
+    data.map((d, i) => ({ d, i })).sort((a, b) => a.d.y - b.d.y || a.i - b.i).forEach((o, k) => { noMap[o.d.name] = String(k + 1).padStart(2, '0'); });
+    data.forEach((d) => { const s = slugify(d.name); this.slugToName[s] = d.name; this.nameToSlug[d.name] = s; });
+    const items = data.map((d) => ({
+      name: d.name,
+      slug: this.nameToSlug[d.name],
+      no: noMap[d.name],
+      title: TITLES[d.name] || d.name,
+      place: d.place,
+      status: d.s.toUpperCase(),
+      statusDot: statusDot(d.s),
+      year: d.y,
+      aria: 'Stages: ' + PH.filter((p) => d.t.includes(p.k)).map((p) => p.label).join(', '),
+      rowStyle: '',
+      panelStyle: d.y === 2026 ? 'flex-direction: column; flex-wrap: nowrap' : '',
+      galStyle: d.y === 2026 ? 'flex: 0 0 auto; width: 100%; max-width: none' : '',
+      thumbStyle: (d.y === 2026 && open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src + '")' : ''),
+      phases: PH.map((p) => ({ on: d.t.includes(p.k), off: !d.t.includes(p.k), dotStyle: p.k === 'own' ? dotOwn : dotOn })),
+      isOpen: open === d.name,
+      expanded: open === d.name ? 'true' : 'false',
+      sign: open === d.name ? '−' : '+',
+      toggle: () => this.setState({ open: this.state.open === d.name ? null : d.name, imgIdx: 0, hover: null }),
+      ...(() => {
+        const imgs = DESC[d.name] && DESC[d.name].img ? DESC[d.name].img : [];
+        const n = imgs.length;
+        const i = n ? (((this.state.imgIdx || 0) % n) + n) % n : 0;
+        const cur = n ? imgs[i] : null;
+        return {
+          hasImages: n > 0,
+          noImages: n === 0,
+          img: cur ? cur.src : '',
+          imgAlt: cur ? cur.alt : '',
+          imgStyle: 'width: 100%; height: 100%; display: block; object-fit: ' + (cur ? cur.fit : 'cover') + ';',
+          counter: n ? String(i + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0') : '',
+          prev: () => this.setState({ imgIdx: (i - 1 + n) % n }),
+          next: () => this.setState({ imgIdx: (i + 1) % n }),
+          galKey: (e) => {
+            if (!n) return;
+            if (e.key === 'ArrowRight') { e.preventDefault(); this.setState({ imgIdx: (i + 1) % n }); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); this.setState({ imgIdx: (i - 1 + n) % n }); }
+          },
+          touchEnd: (e) => {
+            if (this.tx == null || !n) return;
+            const t = e.changedTouches && e.changedTouches[0];
+            const dx = t ? t.clientX - this.tx : 0;
+            this.tx = null;
+            if (Math.abs(dx) > 40) this.setState({ imgIdx: dx < 0 ? (i + 1) % n : (i - 1 + n) % n });
+          }
+        };
+      })(),
+      desc: (DESC[d.name] && DESC[d.name].p ? DESC[d.name].p : ['[Project description]']).map((t) => ({ t })),
+      credits: DESC[d.name] ? DESC[d.name].c : '',
+      hasCredits: !!(DESC[d.name] && DESC[d.name].c),
+      tagsLine: PH.filter((p) => d.t.includes(p.k)).map((p) => p.label.toUpperCase()).join('  |  ')
+    }));
+    const yearsMap = {};
+    items.forEach((it) => { (yearsMap[it.year] = yearsMap[it.year] || []).push(it); });
+    let keys = Object.keys(yearsMap).map(Number).sort((a, b) => a - b);
+    if (order === 'Newest first') keys = keys.reverse();
+    const yOpen = this.state.years || {};
+    items.forEach((it) => { this.nameToYear[it.name] = it.year; });
+    const years = keys.map((y) => ({
+      year: y,
+      items: yearsMap[y],
+      isOpen: !!yOpen[y],
+      expanded: yOpen[y] ? 'true' : 'false',
+      sign: yOpen[y] ? '−' : '+',
+      count: yearsMap[y].length + (yearsMap[y].length === 1 ? ' PROJECT' : ' PROJECTS'),
+      toggle: () => { const nx = { ...(this.state.years || {}) }; nx[y] = !nx[y]; this.setState({ years: nx }); }
+    }));
+    const allOpen = keys.length > 0 && keys.every((y) => yOpen[y]);
+    const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all' : 'Open all', allSign: allOpen ? '\u2212' : '+', toggleAll: () => { if (allOpen) { this.setState({ years: {} }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
+    const legend = PH.map((p, i) => {
+      const on = filter === p.k;
+      return {
+        label: p.label,
+        short: p.short,
+        idx: '0' + (i + 1),
+        pressed: on ? 'true' : 'false',
+        chipStyle: on ? 'background: #1E1D1B; color: #F5F3EE; border: 1px solid #1E1D1B;' : 'background: transparent; color: #1E1D1B; border: 1px solid #BDB7AB;',
+        pick: () => this.setState({ filter: on ? null : p.k })
+      };
+    });
+    const count = (f) => data.filter(f).length;
+    const stats = [
+      { n: String(data.length), label: 'Projects' },
+      { n: String(count((d) => d.t.includes('own'))), label: 'Built, operated and owned' },
+      { n: String(count((d) => d.s === 'Active')), label: 'Active today' },
+      { n: String(count((d) => (d.s === 'In progress' || d.s === 'Ongoing'))), label: 'In the making' }
+    ];
+    const introOpen = !!this.state.intro;
+    const dateOpen = !!this.state.dateNote;
+    return {
+      ...allVals,
+      dateOpen, dateExpanded: dateOpen ? 'true' : 'false', dateBg: dateOpen ? '#5C5850' : 'transparent', dateFg: dateOpen ? '#F4F1EA' : '#5C5850', toggleDate: () => this.setState({ dateNote: !this.state.dateNote }),
+      touchStart: (e) => { const t = e.touches && e.touches[0]; this.tx = t ? t.clientX : null; },
+      years, legend, stats, introOpen, introExpanded: introOpen ? 'true' : 'false', introSign: introOpen ? '−' : '+', toggleIntro: () => this.setState({ intro: !this.state.intro }) };
+  }
+}
+</script>
+
+
+</body></html>
