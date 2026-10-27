@@ -104,6 +104,27 @@
 </style>
 <style>
 body{margin:0;background:#F5F3EE}
+.contact{display:flex;flex-wrap:wrap;gap:16px 32px;border-top:1px solid #1E1D1B;padding:40px 0 80px}
+.contact-label{margin:0;font:500 12px/1.4 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;color:#5C5850}
+.contact-body{flex:999 1 480px;min-width:0;max-width:640px;display:flex;flex-direction:column;gap:24px}
+.contact-lede{margin:0;font-size:24px;line-height:32px;font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+.cform{display:flex;flex-direction:column;gap:20px}
+.cform-field{display:flex;flex-direction:column;gap:8px}
+.cform-field span{font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;color:#5C5850}
+.cform input,.cform textarea{font:400 17px/26px "DM Sans",system-ui,sans-serif;color:#1E1D1B;background:transparent;border:0;border-bottom:1px solid #1E1D1B;border-radius:0;padding:8px 0;width:100%;box-sizing:border-box;resize:vertical}
+.cform textarea{border:1px solid #1E1D1B;padding:12px}
+.cform input::placeholder,.cform textarea::placeholder{color:#8F897D}
+.cform input:focus-visible,.cform textarea:focus-visible{outline:2px solid #1E1D1B;outline-offset:2px}
+.cform [aria-invalid="true"]{border-color:#9B3B2E}
+.cform-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cform-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.cform-send{min-height:44px;padding:0 28px;background:#1E1D1B;color:#F5F3EE;border:1px solid #1E1D1B;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.cform-send:hover{background:#8A6B3F;border-color:#8A6B3F}
+.cform-send:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
+.cform-send:disabled{opacity:.5;cursor:default}
+.cform-status{margin:0;font:400 13px/20px "DM Mono",ui-monospace,monospace;letter-spacing:.02em;color:#5C5850}
+.cform-status.err{color:#9B3B2E}
+.contact-alt{margin:0;font:400 12px/20px "DM Mono",ui-monospace,monospace;letter-spacing:.04em;color:#5C5850}
 a{color:#1E1D1B}a:hover{color:#8A6B3F}
 .yb{display:flex;flex-wrap:wrap;gap:0 32px;border-top:1px solid #1E1D1B;padding:20px 0}
 .yearbtn{flex:0 0 100%;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
@@ -162,7 +183,7 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 <a href="#top" style="text-decoration: none; font-size: 20px; font-weight: 600; letter-spacing: 0.01em">kadmon projects</a>
 <nav aria-label="Main" style="display: flex; gap: 28px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
 <a href="#projects" style="text-decoration: none">PROJECTS</a>
-<a href="mailto:info@kadmonprojects.com" style="text-decoration: none">CONTACT</a>
+<a href="#contact" style="text-decoration: none">CONTACT</a>
 </nav>
 </header>
 
@@ -264,10 +285,24 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 </sc-for>
 </section>
 
+<section id="contact" aria-label="Contact" class="contact">
+<div class="yearcol"><h2 class="contact-label">CONTACT</h2></div>
+<div class="contact-body">
+<p class="contact-lede">Tell us about your place or project, and we will get back to you.</p>
+<form name="contact" class="cform" novalidate="">
+<p class="cform-hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"/></label></p>
+<label class="cform-field" for="contact-email"><span>YOUR EMAIL</span><input id="contact-email" name="email" type="email" required="" autocomplete="email" placeholder="name@example.com"/></label>
+<label class="cform-field" for="contact-message"><span>YOUR INQUIRY</span><textarea id="contact-message" name="message" required="" rows="6" placeholder="What are you working on?"></textarea></label>
+<div class="cform-actions"><button type="submit" class="cform-send">Send</button><p class="cform-status" role="status" aria-live="polite"></p></div>
+</form>
+<p class="contact-alt">Or write to us directly at hello@kadmonprojects.com</p>
+</div>
+</section>
+
 <footer style="border-top: 1px solid #1E1D1B; padding: 32px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
 <span style="display: flex; flex-direction: column; gap: 8px"><span>kadmon projects</span><span style="font-size: 12px; color: #5C5850">© 2026 Yoka Projects Ltd. All rights reserved.</span></span>
 <span style="display: flex; gap: 28px; flex-wrap: wrap">
-<a href="mailto:info@kadmonprojects.com" style="text-decoration: none">info@kadmonprojects.com</a>
+<a href="mailto:hello@kadmonprojects.com" style="text-decoration: none">hello@kadmonprojects.com</a>
 </span>
 </footer>
 
@@ -276,12 +311,12 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;order&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Newest first&quot;,&quot;Oldest first&quot;],&quot;default&quot;:&quot;Newest first&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#9C7A45&quot;,&quot;#1E1D1B&quot;,&quot;#5F6B4E&quot;,&quot;#7A4A3A&quot;],&quot;default&quot;:&quot;#9C7A45&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2300}}">
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { filter: null, open: null, imgIdx: 0, intro: false, dateNote: false, hover: null, years: {} }; this.slugToName = {}; this.nameToYear = {}; this.nameToSlug = {}; this.mx = 0; this.my = 0; this.pvEl = null; this.tx = null; }
+  constructor(props) { super(props); this.state = { filter: null, open: null, imgIdx: 0, intro: true, dateNote: false, hover: null, years: null }; this.slugToName = {}; this.nameToYear = {}; this.nameToSlug = {}; this.mx = 0; this.my = 0; this.pvEl = null; this.tx = null; }
   componentDidMount() {
     try {
       const h = decodeURIComponent((window.location.hash || '').slice(1));
       const name = h && this.slugToName[h];
-      if (name) this.setState({ open: name, imgIdx: 0, years: { ...this.state.years, [this.nameToYear[name]]: true } });
+      if (name) this.setState({ open: name, imgIdx: 0, years: this.state.years ? { ...this.state.years, [this.nameToYear[name]]: true } : null });
     } catch (e) {}
   }
   componentDidUpdate(prevProps, prevState) {
@@ -633,7 +668,7 @@ class Component extends DCLogic {
     items.forEach((it) => { (yearsMap[it.year] = yearsMap[it.year] || []).push(it); });
     let keys = Object.keys(yearsMap).map(Number).sort((a, b) => a - b);
     if (order === 'Newest first') keys = keys.reverse();
-    const yOpen = this.state.years || {};
+    const yOpen = this.state.years || Object.fromEntries(keys.map((y) => [y, true]));
     items.forEach((it) => { this.nameToYear[it.name] = it.year; });
     const years = keys.map((y) => ({
       year: y,
@@ -642,7 +677,7 @@ class Component extends DCLogic {
       expanded: yOpen[y] ? 'true' : 'false',
       sign: yOpen[y] ? '−' : '+',
       count: yearsMap[y].length + (yearsMap[y].length === 1 ? ' PROJECT' : ' PROJECTS'),
-      toggle: () => { const nx = { ...(this.state.years || {}) }; nx[y] = !nx[y]; this.setState({ years: nx }); }
+      toggle: () => { const nx = { ...yOpen }; nx[y] = !nx[y]; this.setState({ years: nx }); }
     }));
     const allOpen = keys.length > 0 && keys.every((y) => yOpen[y]);
     const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all' : 'Open all', allSign: allOpen ? '\u2212' : '+', toggleAll: () => { if (allOpen) { this.setState({ years: {} }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
@@ -676,4 +711,52 @@ class Component extends DCLogic {
 </script>
 
 
+<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden="">
+<input type="hidden" name="form-name" value="contact"/>
+<input name="bot-field"/><input name="email" type="email"/><textarea name="message"></textarea>
+</form>
+<script>
+(function () {
+  var live = /(^|\.)kadmonprojects\.com$|\.netlify\.app$/.test(location.hostname);
+  function setStatus(form, msg, isErr) {
+    var el = form.querySelector('.cform-status');
+    if (!el) return;
+    el.textContent = msg;
+    el.className = 'cform-status' + (isErr ? ' err' : '');
+  }
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (!form || form.getAttribute('name') !== 'contact' || form.hidden) return;
+    e.preventDefault();
+    var email = form.querySelector('[name="email"]');
+    var msg = form.querySelector('[name="message"]');
+    var okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    var okMsg = msg.value.trim().length > 0;
+    email.setAttribute('aria-invalid', okEmail ? 'false' : 'true');
+    msg.setAttribute('aria-invalid', okMsg ? 'false' : 'true');
+    if (!okEmail) { setStatus(form, 'Please enter a valid email address.', true); email.focus(); return; }
+    if (!okMsg) { setStatus(form, 'Please write your inquiry.', true); msg.focus(); return; }
+    if (!live) { setStatus(form, 'Preview only: the form sends on the live site.', false); return; }
+    var btn = form.querySelector('.cform-send');
+    btn.disabled = true;
+    setStatus(form, 'Sending…', false);
+    var body = new URLSearchParams({
+      'form-name': 'contact',
+      'bot-field': form.querySelector('[name="bot-field"]').value,
+      email: email.value.trim(),
+      message: msg.value.trim()
+    }).toString();
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        email.value = ''; msg.value = '';
+        setStatus(form, 'Thank you. Your message was sent, and we will reply by email.', false);
+      })
+      .catch(function () {
+        setStatus(form, 'The message could not be sent. Please try again, or email hello@kadmonprojects.com.', true);
+      })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
 </body></html>
