@@ -167,7 +167,7 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 </header>
 
 <section id="top" style="padding: 72px 0 56px; display: flex; flex-direction: column; gap: 48px">
-<h1 class="hero-title" style="margin: 0; font-size: 76px; line-height: 80px; font-weight: 500; letter-spacing: -0.025em; max-width: 900px">Making places, since <span style="font-size: 0.86em">2010</span>.</h1>
+<h1 class="hero-title" style="margin: 0; font-size: 76px; line-height: 80px; font-weight: 500; letter-spacing: -0.025em; max-width: 900px">Making places since <span style="font-size: 0.86em">2010</span>.</h1>
 <div style="display: flex; flex-direction: column; gap: 16px">
 <div style="max-width: 600px"><button type="button" class="introbtn" aria-expanded="{{introExpanded}}" sc-camel-on-click="{{toggleIntro}}"><span>A note on the projects</span><span aria-hidden="true" style="font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{introSign}}</span></button></div>
 <sc-if value="{{introOpen}}" hint-placeholder-val="{{false}}">
@@ -327,7 +327,7 @@ class Component extends DCLogic {
       { y: 2026, name: 'Carasso Beit HaNa’ara', place: 'Hod Hasharon', t: ['concept', 'identity', 'plan'], s: 'In progress' },
       { y: 2026, name: 'Beit Lincoln', place: 'Lincoln 9, Tel Aviv', t: ['concept', 'identity', 'plan'], s: 'In progress' },
       { y: 2026, name: 'Union Live Givat Ram', place: 'Givat Ram, Jerusalem', t: ['plan'], s: 'Delivered' },
-      { y: 2026, name: 'HaTachana and the Museum', place: 'Tel Aviv', t: ['concept', 'plan'], s: 'Delivered' }
+      { y: 2026, name: 'HaTachana and the Museum', place: 'Neve Tzedek, Tel Aviv-Yafo', t: ['concept', 'plan'], s: 'Delivered' }
     ];
     const DESC = {
       'Kolnoa Pe’er': {
@@ -338,13 +338,13 @@ class Component extends DCLogic {
         ],
         c: 'Developer: Reuven Ella and partners  |  Architecture: Michael Azoulay, Mickey Slonim  |  Logo and graphic identity: Rotem Shavit, Four',
         img: [
-          { src: '/_blob/2ce11c7fce1eb8330484d3e1b1b1f1b2', alt: 'Kolnoa Pe’er as a cinema, archival photograph', fit: 'cover' },
-          { src: '/_blob/412b4cbbeb4cdf4a8f14b63f46414f74', alt: 'The building today, with the Kolnoa Pe’er fitness club sign', fit: 'cover' },
-          { src: '/_blob/1e1e56fb82bcf014dcafd53c0df504f5', alt: 'Main training floor under the original roof trusses, with the glass gallery above', fit: 'cover' },
-          { src: '/_blob/be6fccfa2e6885c2fbd010cbd70c4f2a', alt: 'Entrance and studios, signed after the surrounding streets', fit: 'cover' },
-          { src: '/_blob/121deea93350d5e8c60ece02821a9936', alt: 'Stairwell with a retro mural', fit: 'contain' },
-          { src: '/_blob/aafbf246f441d22be7cfcce5aafd76e2', alt: 'Reception desk', fit: 'contain' },
-          { src: '/_blob/04b301cd51430e9153babc0db971459b', alt: 'The stairwell mural being painted', fit: 'contain' }
+          { src: 'assets/photos/2ce11c7fce1eb8330484d3e1b1b1f1b2.jpg', alt: 'Kolnoa Pe’er as a cinema, archival photograph', fit: 'cover' },
+          { src: 'assets/photos/412b4cbbeb4cdf4a8f14b63f46414f74.jpg', alt: 'The building today, with the Kolnoa Pe’er fitness club sign', fit: 'cover' },
+          { src: 'assets/photos/1e1e56fb82bcf014dcafd53c0df504f5.jpg', alt: 'Main training floor under the original roof trusses, with the glass gallery above', fit: 'cover' },
+          { src: 'assets/photos/be6fccfa2e6885c2fbd010cbd70c4f2a.jpg', alt: 'Entrance and studios, signed after the surrounding streets', fit: 'cover' },
+          { src: 'assets/photos/121deea93350d5e8c60ece02821a9936.jpg', alt: 'Stairwell with a retro mural', fit: 'contain' },
+          { src: 'assets/photos/aafbf246f441d22be7cfcce5aafd76e2.jpg', alt: 'Reception desk', fit: 'contain' },
+          { src: 'assets/photos/04b301cd51430e9153babc0db971459b.jpg', alt: 'The stairwell mural being painted', fit: 'contain' }
         ]
       },
       'Beit HaKosher Nordau': {
@@ -355,9 +355,14 @@ class Component extends DCLogic {
         ],
         c: 'Developer: Reuven Ella and partners  |  Interior design: Mickey Slonim  |  Logo: Awesome',
         img: [
-          { src: '/_blob/3fec83504a70adf654addb419db4d9a3', alt: 'The former Gur synagogue at 65 Nordau Boulevard with the Beit HaKosher Nordau sign', fit: 'cover' },
-          { src: '/_blob/c03d2f081616d6e2b2429f67af30691a', alt: 'TRX straps along the tall windows of the former prayer hall', fit: 'cover' },
-          { src: '/_blob/f6a528f4400cf25bdf753f9374c7528e', alt: 'Beit HaKosher Nordau logo', fit: 'contain' }
+          { src: 'assets/photos/3fec83504a70adf654addb419db4d9a3.jpg', alt: 'The former Gur synagogue at 65 Nordau Boulevard with the Beit HaKosher Nordau sign', fit: 'cover' },
+          { src: 'assets/photos/3b1c959c4883d002c6a71661f6873f63.jpg', alt: 'The synagogue building from the street, before', fit: 'cover' },
+          { src: 'assets/photos/71661cbedeea92d84a548d3ddcba5051.jpg', alt: 'The empty prayer hall, with its stained glass windows and chandelier', fit: 'cover' },
+          { src: 'assets/photos/6179c4e875c40ebf145391be2d00cae9.jpg', alt: 'The women’s gallery above the prayer hall, before the works', fit: 'cover' },
+          { src: 'assets/photos/aebf09d95bf1ac04469c6f46f5eab473.jpg', alt: 'A functional training class on the former prayer hall floor', fit: 'cover' },
+          { src: 'assets/photos/98c042647481712b26310fce829ce9fb.jpg', alt: 'A spinning class in the basement', fit: 'cover' },
+          { src: 'assets/photos/c03d2f081616d6e2b2429f67af30691a.jpg', alt: 'TRX straps along the tall windows of the former prayer hall', fit: 'cover' },
+          { src: 'assets/photos/f6a528f4400cf25bdf753f9374c7528e.jpg', alt: 'Beit HaKosher Nordau logo', fit: 'contain' }
         ]
       }
     };
@@ -369,21 +374,22 @@ class Component extends DCLogic {
       ],
       c: 'Developer: The Third Place Ltd (Roni Douek, in partnership with Kadmon)  |  Original architecture: Yaakov Pinkerfeld  |  Conservation: Yoav Messer  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo: Rotem Shavit, Dafna Altman',
       img: [
-        { src: '/_blob/1719081c7f233464c0516765f2d07b0e', alt: 'The original building, archival photograph', fit: 'cover' },
-        { src: '/_blob/23343ef1efe609a084e327866aef74e3', alt: 'Women at work in the sewing workshop, archival photograph', fit: 'cover' },
-        { src: '/_blob/09aea21e11404f80ee9ae069a8ba5783', alt: 'The restored building and courtyard at dusk', fit: 'cover' },
-        { src: '/_blob/3e96d8c854cca7c12eecd371a823cdf7', alt: 'Entrance and café terrace', fit: 'cover' },
-        { src: '/_blob/b6f370fcd0d634970f7f712a950491e0', alt: 'An evening event in the courtyard', fit: 'cover' },
-        { src: '/_blob/dbb3576dcdb33221032c78487d10b0dc', alt: 'Training and drawing in the garden', fit: 'cover' },
-        { src: '/_blob/13ae0662b99a7c9ab418a610af72a529', alt: 'A barre class in the studio', fit: 'cover' },
-        { src: '/_blob/34d2cbab970499b94557af49cfe70c0f', alt: 'The covered roof terrace', fit: 'cover' },
-        { src: '/_blob/fc0dfe92cdf0e47bf8dd2027f97d5da2', alt: 'A watercolor workshop', fit: 'contain' },
-        { src: '/_blob/9f5fb280806ba11660ff4e7c334aff02', alt: 'A lounge corner with exposed brick', fit: 'contain' },
-        { src: '/_blob/d2c164c7b0349b3d496f6a73ac64736c', alt: 'Changing room washbasins', fit: 'cover' },
-        { src: '/_blob/df1ec03eb0b80909bd97a583d1c4ad8d', alt: 'The Beit Hanna sign above the entrance', fit: 'cover' },
-        { src: '/_blob/1ade1fccee85ca47d42ffb99d4c59ec7', alt: 'The white facade against the sky', fit: 'cover' },
-        { src: '/_blob/d856f2c257f067dd81e0a0ac4bedf50b', alt: 'The courtyard palm', fit: 'contain' },
-        { src: '/_blob/399401944f35a48472dfa604bf0a41fb', alt: 'Beit Hanna logo', fit: 'contain' }
+        { src: 'assets/photos/1719081c7f233464c0516765f2d07b0e.jpg', alt: 'The original building, archival photograph', fit: 'cover' },
+        { src: 'assets/photos/23343ef1efe609a084e327866aef74e3.jpg', alt: 'Women at work in the sewing workshop, archival photograph', fit: 'cover' },
+        { src: 'assets/photos/09aea21e11404f80ee9ae069a8ba5783.jpg', alt: 'The restored building and courtyard at dusk', fit: 'cover' },
+        { src: 'assets/photos/3e96d8c854cca7c12eecd371a823cdf7.jpg', alt: 'Entrance and café terrace', fit: 'cover' },
+        { src: 'assets/photos/b6f370fcd0d634970f7f712a950491e0.jpg', alt: 'An evening event in the courtyard', fit: 'cover' },
+        { src: 'assets/photos/ff7b6d03fd3a37370ed48b87679d9b86.jpg', alt: 'An outdoor film screening in the courtyard', fit: 'cover' },
+        { src: 'assets/photos/dbb3576dcdb33221032c78487d10b0dc.jpg', alt: 'Training and drawing in the garden', fit: 'cover' },
+        { src: 'assets/photos/13ae0662b99a7c9ab418a610af72a529.jpg', alt: 'A barre class in the studio', fit: 'cover' },
+        { src: 'assets/photos/34d2cbab970499b94557af49cfe70c0f.jpg', alt: 'The covered roof terrace', fit: 'cover' },
+        { src: 'assets/photos/fc0dfe92cdf0e47bf8dd2027f97d5da2.jpg', alt: 'A watercolor workshop', fit: 'contain' },
+        { src: 'assets/photos/9f5fb280806ba11660ff4e7c334aff02.jpg', alt: 'A lounge corner with exposed brick', fit: 'contain' },
+        { src: 'assets/photos/d2c164c7b0349b3d496f6a73ac64736c.jpg', alt: 'Changing room washbasins', fit: 'cover' },
+        { src: 'assets/photos/df1ec03eb0b80909bd97a583d1c4ad8d.jpg', alt: 'The Beit Hanna sign above the entrance', fit: 'cover' },
+        { src: 'assets/photos/1ade1fccee85ca47d42ffb99d4c59ec7.jpg', alt: 'The white facade against the sky', fit: 'cover' },
+        { src: 'assets/photos/d856f2c257f067dd81e0a0ac4bedf50b.jpg', alt: 'The courtyard palm', fit: 'contain' },
+        { src: 'assets/photos/3ef5c555c7762bbd132ec4264edde005.jpg', alt: 'Beit Hanna logo', fit: 'contain' }
       ]
     };
     DESC['Beit Hanna HaRabi'] = {
@@ -392,7 +398,26 @@ class Component extends DCLogic {
         'The second Beit Hanna. The building was exposed rather than covered, to fit the neighborhood instead of standing out in it. It holds studios, a lounge, a green roof, a ceramics room, a café with student-style seating and meeting rooms, with changing programming. It runs on memberships, single entries, classes, workshops, courses and events.',
         'It opened in May 2022. A street that hardly anyone walked through became a new destination for people from across the city, and more businesses have since opened nearby.'
       ],
-      c: 'Developer: The Third Place Ltd  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo and graphic identity: Eyal Eliezer'
+      c: 'Developer: The Third Place Ltd  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo and graphic identity: Eyal Eliezer',
+      img: [
+        { src: 'assets/photos/1b42d01698a6f651c0b9fb4823d14cc8.jpg', alt: 'The facade lit up on an evening, with people gathered outside', fit: 'cover' },
+        { src: 'assets/photos/272502317d56d410e0cb9d84ffeec3e8.jpg', alt: 'The building before, covered in graffiti', fit: 'cover' },
+        { src: 'assets/photos/51d7d93208336f6453d6e97cd13eac6e.jpg', alt: 'The old textile factory floor', fit: 'cover' },
+        { src: 'assets/photos/235c1b78211b10f3a9d5f3a043ff5366.jpg', alt: 'Shelves of yarn cones in the factory', fit: 'cover' },
+        { src: 'assets/photos/d84fb0497da0846b01147a94c6879f3d.jpg', alt: 'The renovated building by day, with its green roof', fit: 'cover' },
+        { src: 'assets/photos/4f7ecf3e44bb4b6a5110f5cebf49d5c1.jpg', alt: 'The café counter by the street windows', fit: 'cover' },
+        { src: 'assets/photos/ae84c5d6f4f8ab1f437d4dc502f0d74b.jpg', alt: 'The lounge opening onto the courtyard', fit: 'cover' },
+        { src: 'assets/photos/65886c2339b422c7d7a3ca0396f196c9.jpg', alt: 'The shop, with books and local goods', fit: 'cover' },
+        { src: 'assets/photos/c5e3398fe7c371625c86b3ec6a55fb60.jpg', alt: 'Reading on the green roof', fit: 'cover' },
+        { src: 'assets/photos/5282d3f954c8d94205f332cadce0e7de.jpg', alt: 'The pilates studio', fit: 'cover' },
+        { src: 'assets/photos/7d29364fd3ea0accc9771c9c0d256a3a.jpg', alt: 'A yoga class in the studio', fit: 'cover' },
+        { src: 'assets/photos/5d3bd7cf8446196918729c19b7077ee3.jpg', alt: 'A workshop in the ceramics room', fit: 'cover' },
+        { src: 'assets/photos/d22495921d10053d819afb68d060e39a.jpg', alt: 'Running in the gym', fit: 'cover' },
+        { src: 'assets/photos/c0d4bd6f84750ff6c3cd5e38fd9851e3.jpg', alt: 'A night event in the courtyard, seen from above', fit: 'cover' },
+        { src: 'assets/photos/f4cc7bf8db70ab2031a7c39107403647.jpg', alt: 'The kitchen preparing for an event', fit: 'cover' },
+        { src: 'assets/photos/6f92aee705ddedf7927847e13666468c.jpg', alt: 'Invitation to the opening, May 2022', fit: 'contain' },
+        { src: 'assets/photos/da483ca3cd3850093105b97bd7a5c2c6.jpg', alt: 'Beit Hanna HaRabi logo', fit: 'contain' }
+      ]
     };
     DESC['Carasso JOMO'] = {
       p: [
@@ -413,7 +438,7 @@ class Component extends DCLogic {
       'Kolnoa Smadar': 'Kolnoa Smadar, a proposal to turn the cinema into a house for the public',
       'HaTachana and the Museum': 'HaTachana & Batei HaOsef, connecting two historic compounds to each other and to the city through everyday public uses',
       'Beit Berl College': 'Beit Berl College, a master plan to open the campus to the public',
-      'Kibbutz Nir Am': 'Developing a hospitality and community venture',
+      'Kibbutz Nir Am': 'Kibbutz Nir Am, a hotel that is also a public place',
       'Shenkar Street Lot, Gav-Yam': 'The Hide Line, from isolation to destination: Gav-Yam’s hidden parking lot',
       'Beit Lincoln': 'Beit Lincoln, a floor and a rooftop for working, training and unwinding in the old Mekorot building',
       'Carasso Beit HaNa’ara': 'Hadarim, identity and shared spaces for a new neighborhood by Carasso',
@@ -428,16 +453,34 @@ class Component extends DCLogic {
       ],
       c: 'Developer: The Third Place Ltd  |  Original architecture: Robert Bennett  |  Interior design: Dan Troim  |  Styling: Adva Hofstein  |  Landscape and planting: Gilad Sharon, Haim Cohen  |  Logo and graphic identity: Eyal Eliezer',
       img: [
-        { src: '/_blob/0163b08e72b2f04f4c4bd2bf1c2db8ad', alt: 'The building before the renovation', fit: 'cover' },
-        { src: '/_blob/9c21d5e99e1c6b8b71a56f0663f8f0f6', alt: 'The back of the building and the steps to the commercial center, before', fit: 'cover' },
-        { src: '/_blob/e4a4b82b6854c27c3eba06f642adcff5', alt: 'The main hall in the yeshiva years', fit: 'cover' },
-        { src: '/_blob/bdbe5cd9439364984a865a50f5279ff4', alt: 'The old cinema hall during the works', fit: 'cover' },
-        { src: '/_blob/50819936da4b17ea6af5825516ec0994', alt: 'The lounge and the gallery today', fit: 'cover' },
-        { src: '/_blob/1377f264b155111c534132cf098cba71', alt: 'The lounge from above', fit: 'cover' },
-        { src: '/_blob/7eb4d55767b1414842a74b2d09d29c19', alt: 'An ordinary day in the lounge', fit: 'cover' },
-        { src: '/_blob/8a7969f2a431fc4c65582022f2fdf967', alt: 'Low seating along the slanted wall', fit: 'cover' },
-        { src: '/_blob/4f62dac7a0eabae6f062d21d54dafefe', alt: 'The ceramics room', fit: 'cover' },
-        { src: '/_blob/94443866f760a49222c2d25753a17529', alt: 'A pilates class', fit: 'cover' }
+        { src: 'assets/photos/84a5796c09d07a640ecdcec9b71554f0.jpg', alt: 'The lounge, the stairs and the ceramics room', fit: 'cover' },
+        { src: 'assets/photos/0163b08e72b2f04f4c4bd2bf1c2db8ad.jpg', alt: 'The building before the renovation', fit: 'cover' },
+        { src: 'assets/photos/9c21d5e99e1c6b8b71a56f0663f8f0f6.jpg', alt: 'The back of the building and the steps to the commercial center, before', fit: 'cover' },
+        { src: 'assets/photos/41cd6326e1ba2f24600c94dc19365db4.jpg', alt: 'The corner of the building, before', fit: 'cover' },
+        { src: 'assets/photos/1244e7f346ff812bdd81956c5e25be5b.jpg', alt: 'The side wall and the water tank, before', fit: 'cover' },
+        { src: 'assets/photos/e7bbb8be04676c68de9228b45548e342.jpg', alt: 'The rear wall covered in graffiti, before', fit: 'cover' },
+        { src: 'assets/photos/e4a4b82b6854c27c3eba06f642adcff5.jpg', alt: 'The main hall in the yeshiva years', fit: 'cover' },
+        { src: 'assets/photos/bdbe5cd9439364984a865a50f5279ff4.jpg', alt: 'The old cinema hall during the works', fit: 'cover' },
+        { src: 'assets/photos/9ec63adfa03276f75aaaa0f765f8fbea.jpg', alt: 'Going over the plans on site during the works', fit: 'cover' },
+        { src: 'assets/photos/5db9d3e25b98e11a99a1d357231978d8.jpg', alt: 'The new gallery and stairs, before the furniture arrived', fit: 'cover' },
+        { src: 'assets/photos/50819936da4b17ea6af5825516ec0994.jpg', alt: 'The lounge and the gallery today', fit: 'cover' },
+        { src: 'assets/photos/1377f264b155111c534132cf098cba71.jpg', alt: 'The lounge from above', fit: 'cover' },
+        { src: 'assets/photos/7eb4d55767b1414842a74b2d09d29c19.jpg', alt: 'An ordinary day in the lounge', fit: 'cover' },
+        { src: 'assets/photos/8a7969f2a431fc4c65582022f2fdf967.jpg', alt: 'Low seating along the slanted wall', fit: 'cover' },
+        { src: 'assets/photos/4f62dac7a0eabae6f062d21d54dafefe.jpg', alt: 'The ceramics room', fit: 'cover' },
+        { src: 'assets/photos/94443866f760a49222c2d25753a17529.jpg', alt: 'A pilates class', fit: 'cover' },
+        { src: 'assets/photos/223f0e88bf48ba847ed80dbdb0172f36.jpg', alt: 'A busy afternoon in the lounge', fit: 'cover' },
+        { src: 'assets/photos/f5158474674356f27c6c58197e4ae167.jpg', alt: 'The meeting room', fit: 'cover' },
+        { src: 'assets/photos/7d62288fb00d6ef3bd674056276b37a8.jpg', alt: 'The ceramics room seen through the glass', fit: 'cover' },
+        { src: 'assets/photos/be6a4fc883b1a8714f7b119f23ac86c6.jpg', alt: 'An evening talk in the lounge', fit: 'cover' },
+        { src: 'assets/photos/b3aa5130ca932de2e57bb7b15acbce42.jpg', alt: 'A reformer pilates class', fit: 'cover' },
+        { src: 'assets/photos/c7e9fb751b3a36b4304188b302f6cd25.jpg', alt: 'A yoga class at the rope wall', fit: 'cover' },
+        { src: 'assets/photos/a7683991bf023e0473dfc1f93690023e.jpg', alt: 'A barre class in the studio', fit: 'cover' },
+        { src: 'assets/photos/1764e76dde82b30a2483145d25d7fd8d.jpg', alt: 'People working at the lounge desks', fit: 'cover' },
+        { src: 'assets/photos/a803a4742767a01a376089798ae29d28.jpg', alt: 'A full working day in the lounge', fit: 'cover' },
+        { src: 'assets/photos/65f9856519987d12b378c10d1c64af37.jpg', alt: 'Working and eating on the tatami platform, from above', fit: 'cover' },
+        { src: 'assets/photos/1755bcac9b15585e30b343f885afc6c0.jpg', alt: 'Poster announcing the opening, August 2024', fit: 'contain' },
+        { src: 'assets/photos/1bea7711c84389186381f58d86a8ee38.jpg', alt: 'Beit Hanna Brodetzky logo', fit: 'contain' }
       ]
     };
     DESC['Carasso Rival'] = {
@@ -455,9 +498,9 @@ class Component extends DCLogic {
       ],
       c: 'Developer: Carasso Real Estate',
       img: [
-        { src: '/_blob/cb59021c46a532f80be839395af84049', alt: 'Rendering: the neighborhood from across the water', fit: 'cover' },
-        { src: '/_blob/049a5d7019a69eb8cacb711d420b13f7', alt: 'Rendering: the residents’ gym', fit: 'cover' },
-        { src: '/_blob/193736fdc09c1b2a087109d436bbf650', alt: 'Rendering: the residents’ lounge and kitchen', fit: 'cover' }
+        { src: 'assets/photos/cb59021c46a532f80be839395af84049.jpg', alt: 'Rendering: the neighborhood from across the water', fit: 'cover' },
+        { src: 'assets/photos/049a5d7019a69eb8cacb711d420b13f7.jpg', alt: 'Rendering: the residents’ gym', fit: 'cover' },
+        { src: 'assets/photos/193736fdc09c1b2a087109d436bbf650.jpg', alt: 'Rendering: the residents’ lounge and kitchen', fit: 'cover' }
       ]
     };
     DESC['Wellbeing Center Talpiot'] = {
@@ -467,7 +510,7 @@ class Component extends DCLogic {
       ],
       c: 'Developer: Eden, the Jerusalem Economic Development Company Ltd',
       img: [
-        { src: '/_blob/7c0b29caaabdff9e94008ae08ca98b95', alt: 'The municipal space under construction in Talpiot', fit: 'cover' }
+        { src: 'assets/photos/7c0b29caaabdff9e94008ae08ca98b95.jpg', alt: 'The municipal space under construction in Talpiot', fit: 'cover' }
       ]
     };
     DESC['Kolnoa Smadar'] = {
@@ -477,9 +520,9 @@ class Component extends DCLogic {
       ],
       c: 'Initiators: Roni Ayalon, Rotem Ariav (the Smadar Initiative)  |  Architecture: Studio Dan Troim  |  Economic consulting: Asaf Bilsky  |  Graphic design: Studio Idit-Anat',
       img: [
-        { src: '/_blob/9ac2453e507db93c5308fffc35f4c9a0', alt: 'Kolnoa Smadar, historical photo', fit: 'cover' },
-        { src: '/_blob/75156a85f080383546d6049fb7e67458', alt: 'Plan: entrance floor and cinema hall', fit: 'contain' },
-        { src: '/_blob/aa2c5986c8bf08df62d1b0fe30107376', alt: 'Plan: middle floor and roof terrace', fit: 'contain' }
+        { src: 'assets/photos/9ac2453e507db93c5308fffc35f4c9a0.jpg', alt: 'Kolnoa Smadar, historical photo', fit: 'cover' },
+        { src: 'assets/photos/75156a85f080383546d6049fb7e67458.jpg', alt: 'Plan: entrance floor and cinema hall', fit: 'contain' },
+        { src: 'assets/photos/aa2c5986c8bf08df62d1b0fe30107376.jpg', alt: 'Plan: middle floor and roof terrace', fit: 'contain' }
       ]
     };
     DESC['Shenkar Street Lot, Gav-Yam'] = {
@@ -490,18 +533,18 @@ class Component extends DCLogic {
       ],
       c: 'Developer: Gav-Yam  |  Original architecture: Moshe Tzur  |  Architecture: Nir Leshem',
       img: [
-        { src: '/_blob/2a8b0c1c0a89df91a48a5c9e103483dc', alt: 'Rendering: the rear side of the complex in the evening', fit: 'cover' },
-        { src: '/_blob/1d5f9e1152ea966caf4af6ed08095039', alt: 'Rendering: tables under a planted canopy', fit: 'cover' },
-        { src: '/_blob/ea03c881e8d8d8b38f29472cd0246ee4', alt: 'Rendering: the entrance plaza', fit: 'cover' },
-        { src: '/_blob/a4e418d951eadd3420eec876c328f77c', alt: 'Rendering: seating stairs', fit: 'cover' },
-        { src: '/_blob/b21e0be3696d55941c1761cdc07e1379', alt: 'Rendering: the café and garden', fit: 'cover' },
-        { src: '/_blob/a35c5984046edce4df230244e6e709bc', alt: 'Rendering: the podium on the intermediate level', fit: 'cover' },
-        { src: '/_blob/3045ccffc8a3df278b6545c143444110', alt: 'Rendering: a green buffer along the parking strip', fit: 'cover' },
-        { src: '/_blob/6ff061d5a3126afa6bc4d9b1c6dcbadd', alt: 'Rendering: the rock', fit: 'cover' },
-        { src: '/_blob/4fc91c75c962361eaf8576c44fa85613', alt: 'Rendering: a greenhouse pavilion as a gym', fit: 'cover' },
-        { src: '/_blob/9e86d672480f3ff31ca48711cf13ff55', alt: 'Rendering: a greenhouse pavilion for flexible work', fit: 'cover' },
-        { src: '/_blob/b0031dc175565f60b2b499435e2ef8e8', alt: 'Rendering: a greenhouse pavilion for events', fit: 'cover' },
-        { src: '/_blob/405e88fbc0c086c1cdac279f50420968', alt: 'Rendering: an evening event in the plaza', fit: 'cover' }
+        { src: 'assets/photos/2a8b0c1c0a89df91a48a5c9e103483dc.jpg', alt: 'Rendering: the rear side of the complex in the evening', fit: 'cover' },
+        { src: 'assets/photos/1d5f9e1152ea966caf4af6ed08095039.jpg', alt: 'Rendering: tables under a planted canopy', fit: 'cover' },
+        { src: 'assets/photos/ea03c881e8d8d8b38f29472cd0246ee4.jpg', alt: 'Rendering: the entrance plaza', fit: 'cover' },
+        { src: 'assets/photos/a4e418d951eadd3420eec876c328f77c.jpg', alt: 'Rendering: seating stairs', fit: 'cover' },
+        { src: 'assets/photos/b21e0be3696d55941c1761cdc07e1379.jpg', alt: 'Rendering: the café and garden', fit: 'cover' },
+        { src: 'assets/photos/a35c5984046edce4df230244e6e709bc.jpg', alt: 'Rendering: the podium on the intermediate level', fit: 'cover' },
+        { src: 'assets/photos/3045ccffc8a3df278b6545c143444110.jpg', alt: 'Rendering: a green buffer along the parking strip', fit: 'cover' },
+        { src: 'assets/photos/6ff061d5a3126afa6bc4d9b1c6dcbadd.jpg', alt: 'Rendering: the rock', fit: 'cover' },
+        { src: 'assets/photos/4fc91c75c962361eaf8576c44fa85613.jpg', alt: 'Rendering: a greenhouse pavilion as a gym', fit: 'cover' },
+        { src: 'assets/photos/9e86d672480f3ff31ca48711cf13ff55.jpg', alt: 'Rendering: a greenhouse pavilion for flexible work', fit: 'cover' },
+        { src: 'assets/photos/b0031dc175565f60b2b499435e2ef8e8.jpg', alt: 'Rendering: a greenhouse pavilion for events', fit: 'cover' },
+        { src: 'assets/photos/405e88fbc0c086c1cdac279f50420968.jpg', alt: 'Rendering: an evening event in the plaza', fit: 'cover' }
       ]
     };
     DESC['Beit Berl College'] = {
@@ -536,11 +579,11 @@ class Component extends DCLogic {
         'The aim was a concept that supports the welfare and community life of kibbutz members, in a model that pays for itself through people from outside the kibbutz. A third place for the kibbutz and the region: one building with sport, food, work and community, for members, families, young people, people who work from home and visitors. The work covered an early program, the uses for each floor and the principles of an economic model. The spatial planning took into account the balance between opening the place to people from outside and the members’ daily life.',
         'The work was at an early stage. The events of October 7 stopped the process, and the project did not go ahead.'
       ],
-      c: 'Developer: Kibbutz Ga’ash  |  Planning and planning lead: Rotem Shevchenko'
+      c: 'Developer: Kibbutz Ga’ash  |  Planning: Rotem Shevchenko'
     };
     DESC['Kibbutz Nir Am'] = {
       p: [
-        'Kibbutz Nir Am, in the Western Negev near Sderot, one of the Otef communities attacked on October 7, 2023. On the kibbutz’s land, a hospitality, culinary and community venture is being developed to support the renewal and resilience of the region: jobs, local producers and businesses, sustainable tourism and a stronger local community.',
+        'Kibbutz Nir Am, in the Western Negev near Sderot, one of the Gaza border communities attacked on October 7, 2023. On the kibbutz’s land, a hospitality, culinary and community venture is being developed to support the renewal and resilience of the region: jobs, local producers and businesses, sustainable tourism and a stronger local community.',
         'The idea is a hotel that is also a public place. Next to the rooms: a restaurant, a café and a market for local produce, studios for movement and wellness, workshops for art and crafts, and a greenhouse pavilion for events, markets and gatherings. A daily routine for the people of the area, which guests join while they stay.',
         'The work covers leading and coordinating the project: the concept and vision, the program and mix of uses, regional research, the business model and financial plan, the name and brand direction, the investor presentation, coordinating the architect and the consultants, and finding operating partners.'
       ],
@@ -553,15 +596,15 @@ class Component extends DCLogic {
       ],
       c: 'Developer: Atarim  |  Content and graphics: Bar De Langa  |  Architectural assistance: Nadav Heifert',
       img: [
-        { src: '/_blob/55baf22d1b629b597179721b3110159c', alt: 'Jaffa railway station, 1902, archival photograph', fit: 'cover' },
-        { src: '/_blob/59fc8b663edd5ba7ff1c5ac3358d7cbe', alt: 'Sketch of the station as an open public space', fit: 'cover' },
-        { src: '/_blob/e8185a52561a5c093868953fe14463e6', alt: 'Sketch of everyday life along the old platform', fit: 'contain' },
-        { src: '/_blob/fe48eb10efb3c92adc7ca1e9723f7b66', alt: 'Site map of public and commercial uses across both compounds', fit: 'contain' },
-        { src: '/_blob/cb10256c3d8d5bd811b9723d8c2817a1', alt: 'Rendering: a local market under a restored shed', fit: 'cover' },
-        { src: '/_blob/bd5a0f42a694b4649306f1419b1ea6fd', alt: 'Rendering: an exhibition opening at a restored building', fit: 'cover' },
-        { src: '/_blob/06141f769a94d6d32ec5ac2fd01dcf63', alt: 'Rendering: a movement studio in a small building', fit: 'cover' },
-        { src: '/_blob/441d483e5b924f11ab2d90815a826a82', alt: 'Rendering: a craft workshop opening onto the garden', fit: 'cover' },
-        { src: '/_blob/436bd5fcd7b38a96c2382efa470f7236', alt: 'Rendering: an evening event along the tracks', fit: 'cover' }
+        { src: 'assets/photos/55baf22d1b629b597179721b3110159c.jpg', alt: 'Jaffa railway station, 1902, archival photograph', fit: 'cover' },
+        { src: 'assets/photos/59fc8b663edd5ba7ff1c5ac3358d7cbe.jpg', alt: 'Sketch of the station as an open public space', fit: 'cover' },
+        { src: 'assets/photos/e8185a52561a5c093868953fe14463e6.jpg', alt: 'Sketch of everyday life along the old platform', fit: 'contain' },
+        { src: 'assets/photos/fe48eb10efb3c92adc7ca1e9723f7b66.jpg', alt: 'Site map of public and commercial uses across both compounds', fit: 'contain' },
+        { src: 'assets/photos/cb10256c3d8d5bd811b9723d8c2817a1.jpg', alt: 'Rendering: a local market under a restored shed', fit: 'cover' },
+        { src: 'assets/photos/bd5a0f42a694b4649306f1419b1ea6fd.jpg', alt: 'Rendering: an exhibition opening at a restored building', fit: 'cover' },
+        { src: 'assets/photos/06141f769a94d6d32ec5ac2fd01dcf63.jpg', alt: 'Rendering: a movement studio in a small building', fit: 'cover' },
+        { src: 'assets/photos/441d483e5b924f11ab2d90815a826a82.jpg', alt: 'Rendering: a craft workshop opening onto the garden', fit: 'cover' },
+        { src: 'assets/photos/436bd5fcd7b38a96c2382efa470f7236.jpg', alt: 'Rendering: an evening event along the tracks', fit: 'cover' }
       ]
     };
     const open = this.state.open;
@@ -588,9 +631,9 @@ class Component extends DCLogic {
       year: d.y,
       aria: 'Stages: ' + PH.filter((p) => d.t.includes(p.k)).map((p) => p.label).join(', '),
       rowStyle: '',
-      panelStyle: d.y === 2026 ? 'flex-direction: column; flex-wrap: nowrap' : '',
-      galStyle: d.y === 2026 ? 'flex: 0 0 auto; width: 100%; max-width: none' : '',
-      thumbStyle: (d.y === 2026 && open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src + '")' : ''),
+      panelStyle: 'flex-direction: column; flex-wrap: nowrap',
+      galStyle: 'flex: 0 0 auto; width: 100%; max-width: none',
+      thumbStyle: (open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src + '")' : ''),
       phases: PH.map((p) => ({ on: d.t.includes(p.k), off: !d.t.includes(p.k), dotStyle: p.k === 'own' ? dotOwn : dotOn })),
       isOpen: open === d.name,
       expanded: open === d.name ? 'true' : 'false',
