@@ -83,6 +83,9 @@ button:focus-visible{outline:2px solid var(--fg);outline-offset:4px}
 button:disabled{opacity:.5;cursor:default}
 .status{margin:0;font:400 13px/20px 'DM Mono',ui-monospace,monospace;letter-spacing:.02em;color:var(--muted)}
 .status.err{color:var(--err)}
+.notice{margin:0;font-size:14px;line-height:22px;color:var(--muted)}
+.notice a{color:var(--muted);text-underline-offset:3px}
+footer .links{display:flex;flex-wrap:wrap;gap:28px}
 .alt{margin:0;font:400 12px/20px 'DM Mono',ui-monospace,monospace;letter-spacing:.04em;color:var(--muted)}
 footer{border-top:1px solid var(--fg);padding:32px 0 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-family:'DM Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.04em}
 footer .col{display:flex;flex-direction:column;gap:8px}
@@ -113,6 +116,7 @@ footer a{text-decoration:none}
 <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <label class="field" for="contact-email"><span>YOUR EMAIL</span><input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="name@example.com"></label>
 <label class="field" for="contact-message"><span>YOUR INQUIRY</span><textarea id="contact-message" name="message" required rows="7" placeholder="What are you working on?"></textarea></label>
+<p class="notice">We use your details only to reply to you. See our <a href="/privacy">privacy policy</a>.</p>
 <div class="actions"><button type="submit">Send</button><p class="status" role="status" aria-live="polite"></p></div>
 </form>
 <p class="alt">Or write to us directly at hello@kadmonprojects.com</p>
@@ -122,7 +126,7 @@ footer a{text-decoration:none}
 
 <footer>
 <span class="col"><span>kadmon projects</span><small>© 2026 Yoka Projects Ltd. All rights reserved.</small></span>
-<span><a href="mailto:hello@kadmonprojects.com">hello@kadmonprojects.com</a></span>
+<span class="links"><a href="mailto:hello@kadmonprojects.com">hello@kadmonprojects.com</a><a href="/privacy">Privacy</a></span>
 </footer>
 </div>
 
