@@ -321,9 +321,12 @@ class Component extends DCLogic {
       const slug = this.nameToSlug[cur];
       try { history.replaceState(null, '', '#' + slug); } catch (e) {}
       try { (this.imgsByName && this.imgsByName[cur] || []).forEach((src) => { const im = new Image(); im.src = src; }); } catch (e) {}
+      if (this.posFor !== cur) { this.posFor = cur; requestAnimationFrame(() => { try { const st = document.querySelector('#' + slug + ' .gstrip'); const sl = st ? st.querySelectorAll('.gslide') : []; if (sl.length > 2) st.scrollTo({ left: sl[1].offsetLeft - sl[0].offsetLeft, behavior: 'instant' }); } catch (e) {} }); }
       const el = document.getElementById(slug);
       if (el && this.deepLink) { this.deepLink = false; requestAnimationFrame(() => { try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }); }
-    } else if (!cur && was) {
+    }
+    if (!cur) this.posFor = null;
+    if (!cur && was) {
       try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
     }
   }
@@ -659,12 +662,13 @@ class Component extends DCLogic {
     const noMap = {};
     data.map((d, i) => ({ d, i })).sort((a, b) => a.d.y - b.d.y || a.i - b.i).forEach((o, k) => { noMap[o.d.name] = String(k + 1).padStart(2, '0'); });
     data.forEach((d) => { const s = slugify(d.name); this.slugToName[s] = d.name; this.nameToSlug[d.name] = s; });
-    const goTo = (e, idx) => {
+    const slideLeft = (st, k) => { const sl = st.querySelectorAll('.gslide'); return sl[k] ? sl[k].offsetLeft - sl[0].offsetLeft : 0; };
+    const goTo = (e, slideK, realIdx) => {
       try {
-        const g = e.currentTarget.closest('.gal'); const st = g && g.querySelector('.gstrip'); const sl = st ? st.querySelectorAll('.gslide') : [];
-        if (sl[idx]) { const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; st.scrollTo({ left: sl[idx].offsetLeft - sl[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); }
+        const g = e.currentTarget.closest('.gal'); const st = g && g.querySelector('.gstrip');
+        if (st) { const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; st.scrollTo({ left: slideLeft(st, slideK), behavior: reduce ? 'auto' : 'smooth' }); }
       } catch (err) {}
-      this.setState({ imgIdx: idx });
+      this.setState({ imgIdx: realIdx });
     };
     const items = data.map((d) => ({
       name: d.name,
@@ -696,20 +700,23 @@ class Component extends DCLogic {
           noImages: n === 0,
           img: cur ? cur.src : '',
           imgAlt: cur ? cur.alt : '',
-          slides: imgs.map((x) => ({ src: x.src, alt: x.alt, style: 'object-fit: ' + (x.fit || 'cover') + ';' })),
+          slides: (n > 1 ? [imgs[n - 1], ...imgs, imgs[0]] : imgs).map((x) => ({ src: x.src, alt: x.alt, style: 'object-fit: ' + (x.fit || 'cover') + ';' })),
           counter: n ? String(i + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0') : '',
-          prev: (e) => goTo(e, (i - 1 + n) % n),
-          next: (e) => goTo(e, (i + 1) % n),
+          prev: (e) => goTo(e, n > 1 ? i : 0, (i - 1 + n) % n),
+          next: (e) => goTo(e, n > 1 ? i + 2 : 0, (i + 1) % n),
           galKey: (e) => {
             if (!n) return;
-            if (e.key === 'ArrowRight') { e.preventDefault(); goTo(e, (i + 1) % n); }
-            else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(e, (i - 1 + n) % n); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); goTo(e, n > 1 ? i + 2 : 0, (i + 1) % n); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(e, n > 1 ? i : 0, (i - 1 + n) % n); }
           },
           onScroll: (e) => {
-            const st = e.currentTarget; const sl = st.querySelectorAll('.gslide'); if (!sl.length) return;
-            const base = sl[0].offsetLeft; let best = 0, bd = Infinity;
-            sl.forEach((el, k) => { const d = Math.abs(el.offsetLeft - base - st.scrollLeft); if (d < bd) { bd = d; best = k; } });
-            if (best !== (this.state.imgIdx || 0)) this.setState({ imgIdx: best });
+            const st = e.currentTarget; const sl = st.querySelectorAll('.gslide'); if (!sl.length || n < 2) return;
+            const base = sl[0].offsetLeft; let k = 0, bd = Infinity;
+            sl.forEach((el, j) => { const d = Math.abs(el.offsetLeft - base - st.scrollLeft); if (d < bd) { bd = d; k = j; } });
+            const real = k === 0 ? n - 1 : (k === n + 1 ? 0 : k - 1);
+            if (real !== (this.state.imgIdx || 0)) this.setState({ imgIdx: real });
+            clearTimeout(this.snapT);
+            this.snapT = setTimeout(() => { if (k === 0 || k === n + 1) { try { st.scrollTo({ left: slideLeft(st, real + 1), behavior: 'instant' }); } catch (err) { st.scrollLeft = slideLeft(st, real + 1); } } }, 160);
           }
         };
       })(),
