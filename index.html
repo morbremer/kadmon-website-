@@ -22,111 +22,27 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<style>/* latin-ext */
-@font-face {
-  font-family: 'DM Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmmono/v16/aFTU7PB1QTsUX8KYthSQBK6PYK3EXw.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'DM Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/77c99264.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'DM Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmmono/v16/aFTR7PB1QTsUX8KYvumzEY2tbYf-Vlh3uA.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'DM Mono';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/b201e15d.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/cba9b8c3.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/cba9b8c3.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmsans/v17/rP2Hp2ywxg089UriCZ2IHTWEBlwu8Q.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/cba9b8c3.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+<style>
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2')}
 </style>
 <style>
 body{margin:0;background:#F5F3EE}
 a{color:#1E1D1B}
 header nav a{display:inline-block;padding:13px 0}
 footer a{display:inline-block;padding:12px 0;margin:-12px 0}
-.topbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;color:#1E1D1B;text-decoration:none}
+.topbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:500 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.06em;color:#1E1D1B;text-decoration:none}
 .topbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .datebtn{position:relative}.datebtn::after{content:'';position:absolute;inset:-14px}
 @media (max-width:760px){.row[aria-expanded="true"] .thumb{display:none}}
 .yb{display:flex;flex-wrap:wrap;gap:0 32px;border-top:1px solid #1E1D1B;padding:20px 0}
 .yearbtn{flex:0 0 100%;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
-.yearnum{font-family:"DM Mono",ui-monospace,monospace;font-size:40px;line-height:44px}
-.yearmeta{display:flex;align-items:center;gap:16px;font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#5C5850}
-.allbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;min-width:44px;padding:0 4px;color:#5C5850;background:none;border:0;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer}
+.yearnum{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:40px;line-height:44px}
+.yearmeta{display:flex;align-items:center;gap:16px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#5C5850}
+.allbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;min-width:44px;padding:0 4px;color:#5C5850;background:none;border:0;font:500 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer}
 .allbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yearbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yb .rows{margin-left:182px;margin-top:8px}
@@ -139,14 +55,14 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 .row:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .panel{display:flex;flex-wrap:wrap;gap:24px 40px;padding:4px 0 32px}
 .ph{flex:1 1 300px;max-width:440px;aspect-ratio:4/3;background:#E7E3DA;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
-.introbtn{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:44px;padding:12px 0;background:none;border:0;border-top:1px solid #BDB7AB;border-bottom:1px solid #BDB7AB;font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer;text-align:left}
+.introbtn{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:44px;padding:12px 0;background:none;border:0;border-top:1px solid #BDB7AB;border-bottom:1px solid #BDB7AB;font:500 13px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer;text-align:left}
 .introbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .gal{flex:1 1 300px;max-width:480px;min-width:0}
 .frame{aspect-ratio:4/3;background:#E7E3DA;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;border:0;padding:0;margin:0;cursor:pointer}
 .frame:focus-visible,.gal:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .item{scroll-margin-top:16px}
 .pgrid{display:grid;grid-template-columns:48px minmax(0,1fr);gap:0 8px;align-items:start}
-.pno{font-family:"DM Mono",ui-monospace,monospace;font-size:12px;line-height:28px;letter-spacing:.04em;color:#5C5850}
+.pno{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;line-height:28px;letter-spacing:.04em;color:#5C5850}
 .nav{width:44px;height:44px;border-radius:50%;border:1px solid #BDB7AB;background:transparent;color:#1E1D1B;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
 .ptext{flex:999 1 360px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:640px}
 .pname{min-width:0;display:flex;gap:0;align-items:flex-start}
@@ -156,7 +72,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 .cell{display:flex;justify-content:center;align-items:center;height:20px}
 .status{width:100%;display:flex;align-items:center;gap:8px;min-height:28px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.02em;padding:12px 16px;min-height:44px;box-sizing:border-box;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.chip{font:500 13px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.02em;padding:12px 16px;min-height:44px;box-sizing:border-box;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
 .stats{display:flex;flex-wrap:wrap;gap:24px 56px}
 .gcap{min-height:40px}
 .marker{background:linear-gradient(104deg,rgba(255,224,60,0) 0.6%,rgba(255,224,60,.75) 2.4%,rgba(255,226,80,.55) 52%,rgba(255,224,60,.8) 97.5%,rgba(255,224,60,0) 99%);padding:2px 5px;margin:0 -2px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:#2E2C29}
@@ -187,12 +103,12 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 }
 </style>
 </helmet>
-<div style="background: #F5F3EE; color: #1E1D1B; font-family: 'DM Sans', system-ui, sans-serif; min-height: 100vh" data-canvas-width="1440" data-canvas-height="2300" data-document-role="page" data-label="Projects page">
+<div style="background: #F5F3EE; color: #1E1D1B; font-family: 'IBM Plex Sans', system-ui, sans-serif; min-height: 100vh" data-canvas-width="1440" data-canvas-height="2300" data-document-role="page" data-label="Projects page">
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 64px); box-sizing: border-box">
 
 <header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 32px 0">
 <a href="#top" style="text-decoration: none; font-size: 20px; font-weight: 600; letter-spacing: 0.04em">KADMON PROJECTS</a>
-<nav aria-label="Main" style="display: flex; gap: 28px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
+<nav aria-label="Main" style="display: flex; gap: 28px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
 <a href="/contact" style="text-decoration: none">CONTACT</a>
 </nav>
 </header>
@@ -200,7 +116,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 <section id="top" style="padding: 72px 0 56px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <h1 class="hero-title" style="margin: 0; font-size: 76px; line-height: 80px; font-weight: 500; letter-spacing: -0.025em; max-width: 900px">Making places since <span style="font-size: 0.86em">2010</span>.</h1>
-<p style="margin: 0; display: flex; align-items: flex-start; gap: 10px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; line-height: 22px; letter-spacing: 0.04em; color: #5C5850"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #9C7A45; display: block; flex: 0 0 auto; margin-top: 7px"></span><span class="marker"><span style="color: #1E1D1B">SITE IN PROGRESS</span> · Projects and images are still being added</span></p>
+<p style="margin: 0; display: flex; align-items: flex-start; gap: 10px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; line-height: 22px; letter-spacing: 0.04em; color: #5C5850"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #9C7A45; display: block; flex: 0 0 auto; margin-top: 7px"></span><span class="marker"><span style="color: #1E1D1B">SITE IN PROGRESS</span> · Projects and images are still being added</span></p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 16px">
 <div style="max-width: 600px"><button type="button" class="introbtn" aria-expanded="{{introExpanded}}" sc-camel-on-click="{{toggleIntro}}"><span>A note on the projects</span><span aria-hidden="true" style="font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{introSign}}</span></button></div>
@@ -225,8 +141,8 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 <button type="button" class="allbtn" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><span>{{allText}}</span></button>
 </div>
 <div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
-<div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" class="datebtn" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
-<div class="rows" style="display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px 24px; align-items: center; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850">
+<div class="yearcol" style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" class="datebtn" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
+<div class="rows" style="display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px 24px; align-items: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850">
 <div class="pname">PROJECT</div>
 <div class="status">STATUS</div>
 </div>
@@ -254,8 +170,8 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 </div>
 <div class="status">
 <span style="{{p.statusDot}}"></span>
-<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; flex: 1 1 auto">{{p.status}}</span>
-<span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{p.sign}}</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; flex: 1 1 auto">{{p.status}}</span>
+<span aria-hidden="true" style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{p.sign}}</span>
 </div>
 </button>
 <sc-if value="{{p.isOpen}}" hint-placeholder-val="{{false}}">
@@ -272,7 +188,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 <button type="button" class="garrow gnext" aria-label="Next image" sc-camel-on-click="{{p.next}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; margin-top: 12px">
-<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C5850">{{p.counter}}</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C5850">{{p.counter}}</span>
 <span class="gcap" style="font-size: 14px; line-height: 20px; color: #2E2C29">{{p.imgAlt}}</span>
 </div>
 </div>
@@ -282,9 +198,9 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 <p style="margin: 0; font-size: 17px; line-height: 27px">{{para.t}}</p>
 </sc-for>
 <div style="margin-top: 10px; padding-top: 16px; border-top: 1px solid #DCD7CC; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #1E1D1B">{{p.tagsLine}}</p>
+<p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; color: #1E1D1B">{{p.tagsLine}}</p>
 <sc-if value="{{p.hasCredits}}" hint-placeholder-val="{{true}}">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; line-height: 20px; color: #5C5850">{{p.credits}}</p>
+<p style="margin: 0; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; line-height: 20px; color: #5C5850">{{p.credits}}</p>
 </sc-if>
 </div>
 </div>
@@ -299,7 +215,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 </section>
 
 <div style="display: flex; justify-content: flex-end; margin-top: -64px; padding: 0 0 24px"><a href="#top" class="topbtn" sc-camel-on-click="{{toTop}}">TOP <span aria-hidden="true">↑</span></a></div>
-<footer style="border-top: 1px solid #1E1D1B; padding: 32px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
+<footer style="border-top: 1px solid #1E1D1B; padding: 32px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
 <span style="display: flex; flex-direction: column; gap: 8px"><span>KADMON PROJECTS</span><span style="font-size: 12px; color: #5C5850">© 2026 Yoka Projects Ltd. All rights reserved.</span></span>
 <span style="display: flex; gap: 28px; flex-wrap: wrap">
 <a href="mailto:hello@kadmonprojects.com" style="text-decoration: none">hello@kadmonprojects.com</a>
