@@ -155,8 +155,20 @@ header nav a{display:inline-block;padding:13px 0}
 .chip{font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.02em;padding:12px 16px;min-height:44px;box-sizing:border-box;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
 .stats{display:flex;flex-wrap:wrap;gap:24px 56px}
 .gcap{min-height:40px}
+.gview{position:relative}
+.gstrip{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.gstrip::-webkit-scrollbar{display:none}
+.gslide{flex:0 0 100%;aspect-ratio:4/3;scroll-snap-align:start;overflow:hidden;background:#E7E3DA}
+.gslide img{width:100%;height:100%;display:block}
+.garrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;padding:0;background:rgba(245,243,238,.85);color:#1E1D1B;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.garrow:focus-visible{outline:2px solid #1E1D1B;outline-offset:2px}
+.gprev{left:12px}.gnext{right:12px}
 @media (max-width:760px){
 .gcap{min-height:60px}
+.garrow{display:none}
+.gstrip{gap:8px;scroll-padding-left:0}
+.gslide{flex-basis:86%}
+.gslide:last-child{margin-right:14%}
 .colhead .rows{display:none !important}
 .yearcol{flex-basis:100%}
 .yb .rows{margin-left:0}
@@ -241,19 +253,19 @@ header nav a{display:inline-block;padding:13px 0}
 <sc-if value="{{p.isOpen}}" hint-placeholder-val="{{false}}">
 <div class="panel" style="{{p.panelStyle}}">
 <sc-if value="{{p.hasImages}}" hint-placeholder-val="{{false}}">
-<div class="gal" style="{{p.galStyle}}" sc-camel-tab-index="0" aria-label="Gallery, use the arrow keys to move between images" sc-camel-on-key-down="{{p.galKey}}" sc-camel-on-touch-start="{{touchStart}}" sc-camel-on-touch-end="{{p.touchEnd}}">
-<button type="button" class="frame" aria-label="Next image" sc-camel-on-click="{{p.next}}">
-<img loading="lazy" src="{{p.img}}" alt="{{p.imgAlt}}" style="{{p.imgStyle}}">
-</button>
-<div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-top: 12px">
-<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; padding-top: 2px">
+<div class="gal" style="{{p.galStyle}}" sc-camel-tab-index="0" aria-label="Gallery, use the arrow keys to move between images" sc-camel-on-key-down="{{p.galKey}}">
+<div class="gview">
+<div class="gstrip" sc-camel-on-scroll="{{p.onScroll}}">
+<sc-for list="{{p.slides}}" as="s" hint-placeholder-count="3">
+<div class="gslide"><img loading="lazy" src="{{s.src}}" alt="{{s.alt}}" style="{{s.style}}"></div>
+</sc-for>
+</div>
+<button type="button" class="garrow gprev" aria-label="Previous image" sc-camel-on-click="{{p.prev}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<button type="button" class="garrow gnext" aria-label="Next image" sc-camel-on-click="{{p.next}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; margin-top: 12px">
 <span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C5850">{{p.counter}}</span>
 <span class="gcap" style="font-size: 14px; line-height: 20px; color: #2E2C29">{{p.imgAlt}}</span>
-</div>
-<div style="display: flex; gap: 8px; flex: 0 0 auto">
-<button type="button" class="nav" aria-label="Previous image" sc-camel-on-click="{{p.prev}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></button>
-<button type="button" class="nav" aria-label="Next image" sc-camel-on-click="{{p.next}}"><svg aria-hidden="true" width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
-</div>
 </div>
 </div>
 </sc-if>
@@ -643,6 +655,13 @@ class Component extends DCLogic {
     const noMap = {};
     data.map((d, i) => ({ d, i })).sort((a, b) => a.d.y - b.d.y || a.i - b.i).forEach((o, k) => { noMap[o.d.name] = String(k + 1).padStart(2, '0'); });
     data.forEach((d) => { const s = slugify(d.name); this.slugToName[s] = d.name; this.nameToSlug[d.name] = s; });
+    const goTo = (e, idx) => {
+      try {
+        const g = e.currentTarget.closest('.gal'); const st = g && g.querySelector('.gstrip'); const sl = st ? st.querySelectorAll('.gslide') : [];
+        if (sl[idx]) { const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; st.scrollTo({ left: sl[idx].offsetLeft - sl[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); }
+      } catch (err) {}
+      this.setState({ imgIdx: idx });
+    };
     const items = data.map((d) => ({
       name: d.name,
       slug: this.nameToSlug[d.name],
@@ -673,21 +692,20 @@ class Component extends DCLogic {
           noImages: n === 0,
           img: cur ? cur.src : '',
           imgAlt: cur ? cur.alt : '',
-          imgStyle: 'width: 100%; height: 100%; display: block; object-fit: ' + (cur ? cur.fit : 'cover') + ';',
+          slides: imgs.map((x) => ({ src: x.src, alt: x.alt, style: 'object-fit: ' + (x.fit || 'cover') + ';' })),
           counter: n ? String(i + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0') : '',
-          prev: () => this.setState({ imgIdx: (i - 1 + n) % n }),
-          next: () => this.setState({ imgIdx: (i + 1) % n }),
+          prev: (e) => goTo(e, (i - 1 + n) % n),
+          next: (e) => goTo(e, (i + 1) % n),
           galKey: (e) => {
             if (!n) return;
-            if (e.key === 'ArrowRight') { e.preventDefault(); this.setState({ imgIdx: (i + 1) % n }); }
-            else if (e.key === 'ArrowLeft') { e.preventDefault(); this.setState({ imgIdx: (i - 1 + n) % n }); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); goTo(e, (i + 1) % n); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(e, (i - 1 + n) % n); }
           },
-          touchEnd: (e) => {
-            if (this.tx == null || !n) return;
-            const t = e.changedTouches && e.changedTouches[0];
-            const dx = t ? t.clientX - this.tx : 0;
-            this.tx = null;
-            if (Math.abs(dx) > 40) this.setState({ imgIdx: dx < 0 ? (i + 1) % n : (i - 1 + n) % n });
+          onScroll: (e) => {
+            const st = e.currentTarget; const sl = st.querySelectorAll('.gslide'); if (!sl.length) return;
+            const base = sl[0].offsetLeft; let best = 0, bd = Infinity;
+            sl.forEach((el, k) => { const d = Math.abs(el.offsetLeft - base - st.scrollLeft); if (d < bd) { bd = d; best = k; } });
+            if (best !== (this.state.imgIdx || 0)) this.setState({ imgIdx: best });
           }
         };
       })(),
@@ -701,6 +719,7 @@ class Component extends DCLogic {
     let keys = Object.keys(yearsMap).map(Number).sort((a, b) => a - b);
     if (order === 'Newest first') keys = keys.reverse();
     const yOpen = this.state.years || (keys.length ? { [Math.max(...keys)]: true } : {});
+    if (this.state.open && this.nameToYear[this.state.open] != null && !this.state.years) yOpen[this.nameToYear[this.state.open]] = true;
     items.forEach((it) => { this.nameToYear[it.name] = it.year; });
     const years = keys.map((y) => ({
       year: y,
