@@ -47,6 +47,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 .yearbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yb .rows{margin-left:182px;margin-top:8px}
 .colhead .rows{margin-left:0;margin-top:0}
+.colhead{flex-wrap:nowrap}.colhead .rows{flex:1 1 auto}
 .yearcol{flex:0 0 150px}
 .rows{flex:999 1 640px;min-width:0}
 .item{border-bottom:1px solid #DCD7CC}
@@ -85,6 +86,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 .garrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;padding:0;background:rgba(245,243,238,.85);color:#1E1D1B;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .garrow:focus-visible{outline:2px solid #1E1D1B;outline-offset:2px}
 .gprev{left:12px}.gnext{right:12px}
+@media (min-width:761px) and (max-width:1100px){.yearcol{flex-basis:64px}.yb .rows{margin-left:96px}.colhead .rows{margin-left:0}.row{grid-template-columns:minmax(0,1fr) 150px}.colhead .rows{grid-template-columns:minmax(0,1fr) 150px !important}}
 @media (max-width:760px){
 .gcap{min-height:60px}
 .garrow{display:none}
