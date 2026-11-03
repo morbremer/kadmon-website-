@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact · kadmon projects</title>
-<meta name="description" content="Get in touch with Kadmon Projects about a place or project.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="description" content="Contact kadmon projects about a place or project.">
 <style>
 /* latin */
 @font-face {
@@ -54,7 +56,7 @@
 :root{--bg:#F5F3EE;--fg:#1E1D1B;--muted:#5C5850;--line:#DCD7CC;--hover:#8A6B3F;--err:#9B3B2E;--ph:#8F897D}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:'DM Sans',system-ui,sans-serif}
-a{color:var(--fg)}a:hover{color:var(--hover)}
+a{color:var(--fg)}
 .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,5vw,64px);min-height:100vh;display:flex;flex-direction:column}
 header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding:32px 0}
 .brand{text-decoration:none;font-size:20px;font-weight:600;letter-spacing:.01em}
@@ -70,7 +72,7 @@ h1{margin:0;font-size:76px;line-height:80px;font-weight:500;letter-spacing:-.025
 form{display:flex;flex-direction:column;gap:20px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field span{font:500 12px/1 'DM Mono',ui-monospace,monospace;letter-spacing:.06em;color:var(--muted)}
-input,textarea{font:400 17px/26px 'DM Sans',system-ui,sans-serif;color:var(--fg);background:transparent;border:0;border-bottom:1px solid var(--fg);border-radius:0;padding:8px 0;width:100%;resize:vertical}
+input,textarea{font:400 17px/26px 'DM Sans',system-ui,sans-serif;color:var(--fg);background:transparent;border:1px solid var(--fg);border-radius:0;padding:10px 12px;width:100%;box-sizing:border-box;resize:vertical}
 textarea{border:1px solid var(--fg);padding:12px}
 input::placeholder,textarea::placeholder{color:var(--ph)}
 input:focus-visible,textarea:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
@@ -78,7 +80,6 @@ input:focus-visible,textarea:focus-visible{outline:2px solid var(--fg);outline-o
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
 button{min-height:44px;padding:0 28px;background:var(--fg);color:var(--bg);border:1px solid var(--fg);font:500 12px/1 'DM Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-button:hover{background:var(--hover);border-color:var(--hover)}
 button:focus-visible{outline:2px solid var(--fg);outline-offset:4px}
 button:disabled{opacity:.5;cursor:default}
 .status{margin:0;font:400 13px/20px 'DM Mono',ui-monospace,monospace;letter-spacing:.02em;color:var(--muted)}
@@ -110,16 +111,16 @@ footer a{text-decoration:none}
 <section class="contact" aria-labelledby="contact-label">
 <h2 class="label" id="contact-label">CONTACT</h2>
 <div class="body">
-<p class="lede">Tell us about your place or project, and we will get back to you.</p>
+<p class="lede">Write about a place or project, and a reply will follow by email.</p>
 <form name="contact" method="POST" action="/contact" data-netlify="true" netlify-honeypot="bot-field" novalidate>
 <input type="hidden" name="form-name" value="contact">
 <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <label class="field" for="contact-email"><span>YOUR EMAIL</span><input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="name@example.com"></label>
 <label class="field" for="contact-message"><span>YOUR INQUIRY</span><textarea id="contact-message" name="message" required rows="7" placeholder="What are you working on?"></textarea></label>
-<p class="notice">We use your details only to reply to you. See our <a href="/privacy">privacy policy</a>.</p>
+<p class="notice">Your details are used only to reply to you. See the <a href="/privacy">privacy policy</a>.</p>
 <div class="actions"><button type="submit">Send</button><p class="status" role="status" aria-live="polite"></p></div>
 </form>
-<p class="alt">Or write to us directly at hello@kadmonprojects.com</p>
+<p class="alt">Or write directly to <a href="mailto:hello@kadmonprojects.com">hello@kadmonprojects.com</a></p>
 </div>
 </section>
 </main>
@@ -157,7 +158,7 @@ footer a{text-decoration:none}
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
       form.reset();
-      setStatus('Thank you. Your message was sent, and we will reply by email.', false);
+      setStatus('Thank you. The message was sent, and a reply will follow by email.', false);
     }).catch(function () {
       setStatus('The message could not be sent. Please try again, or email hello@kadmonprojects.com.', true);
     }).then(function () { btn.disabled = false; });
