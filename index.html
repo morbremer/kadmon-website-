@@ -123,7 +123,7 @@ header nav a{display:inline-block;padding:13px 0}
 .yearbtn{flex:0 0 100%;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .yearnum{font-family:"DM Mono",ui-monospace,monospace;font-size:40px;line-height:44px}
 .yearmeta{display:flex;align-items:center;gap:16px;font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#5C5850}
-.allbtn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;background:none;border:0;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer}
+.allbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;min-width:44px;padding:0 4px;background:none;border:0;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer}
 .allbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yearbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yb .rows{margin-left:182px;margin-top:8px}
@@ -215,9 +215,9 @@ header nav a{display:inline-block;padding:13px 0}
 
 <section id="projects" aria-label="Projects timeline" style="padding-bottom: 96px">
 <div style="display: flex; justify-content: flex-end; padding-bottom: 8px">
-<div style="display: flex; gap: 24px">
-<button type="button" class="allbtn" sc-camel-on-click="{{openAll}}"><span>Open all</span><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">+</span></button>
-<button type="button" class="allbtn" sc-camel-on-click="{{closeAll}}"><span>Close all</span><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">−</span></button>
+<div style="display: flex; gap: 8px">
+<button type="button" class="allbtn" aria-label="Open all years" title="Open all" sc-camel-on-click="{{openAll}}"><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">+</span></button>
+<button type="button" class="allbtn" aria-label="Close all years" title="Close all" sc-camel-on-click="{{closeAll}}"><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">−</span></button>
 </div>
 </div>
 <div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
