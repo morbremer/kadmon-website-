@@ -218,7 +218,7 @@ header nav a{display:inline-block;padding:13px 0}
 
 <section id="projects" aria-label="Projects timeline" style="padding-bottom: 96px">
 <div style="display: flex; justify-content: flex-end; padding-bottom: 8px">
-<button type="button" class="allbtn" aria-label="{{allLabel}}" title="{{allLabel}}" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><svg aria-hidden="true" width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="{{allChevStyle}}"><path d="M7 7l5 5 5-5"></path><path d="M7 13l5 5 5-5"></path></svg></button>
+<button type="button" class="allbtn" aria-label="{{allLabel}}" title="{{allLabel}}" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><svg aria-hidden="true" width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: block"><path d="{{allPathA}}"></path><path d="{{allPathB}}"></path></svg></button>
 </div>
 <div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
 <div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" class="datebtn" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
@@ -744,7 +744,7 @@ class Component extends DCLogic {
       toggle: () => { const nx = { ...yOpen }; nx[y] = !nx[y]; this.setState({ years: nx }); }
     }));
     const allOpen = keys.length > 0 && keys.every((y) => yOpen[y]);
-    const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all years' : 'Open all years', allSign: allOpen ? '\u2212' : '+', allChevStyle: 'display: block; transition: transform .2s; transform: rotate(' + (allOpen ? '180' : '0') + 'deg)', toggleAll: () => { if (allOpen) { this.setState({ years: {}, open: null }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
+    const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all years' : 'Open all years', allSign: allOpen ? '\u2212' : '+', allPathA: allOpen ? 'M7 4l5 5 5-5' : 'M7 9l5-5 5 5', allPathB: allOpen ? 'M7 20l5-5 5 5' : 'M7 15l5 5 5-5', toggleAll: () => { if (allOpen) { this.setState({ years: {}, open: null }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
     const legend = PH.map((p, i) => {
       const on = filter === p.k;
       return {
