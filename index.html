@@ -215,10 +215,7 @@ header nav a{display:inline-block;padding:13px 0}
 
 <section id="projects" aria-label="Projects timeline" style="padding-bottom: 96px">
 <div style="display: flex; justify-content: flex-end; padding-bottom: 8px">
-<div style="display: flex; gap: 8px">
-<button type="button" class="allbtn" aria-label="Open all years" title="Open all" sc-camel-on-click="{{openAll}}"><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">+</span></button>
-<button type="button" class="allbtn" aria-label="Close all years" title="Close all" sc-camel-on-click="{{closeAll}}"><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">−</span></button>
-</div>
+<button type="button" class="allbtn" aria-label="{{allLabel}}" title="{{allLabel}}" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">{{allSign}}</span></button>
 </div>
 <div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
 <div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" class="datebtn" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
@@ -744,7 +741,7 @@ class Component extends DCLogic {
       toggle: () => { const nx = { ...yOpen }; nx[y] = !nx[y]; this.setState({ years: nx }); }
     }));
     const allOpen = keys.length > 0 && keys.every((y) => yOpen[y]);
-    const allVals = { openAll: () => { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); }, closeAll: () => { this.setState({ years: {}, open: null }); } };
+    const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all years' : 'Open all years', allSign: allOpen ? '\u2212' : '+', toggleAll: () => { if (allOpen) { this.setState({ years: {}, open: null }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
     const legend = PH.map((p, i) => {
       const on = filter === p.k;
       return {
