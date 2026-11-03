@@ -155,6 +155,7 @@ header nav a{display:inline-block;padding:13px 0}
 .chip{font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.02em;padding:12px 16px;min-height:44px;box-sizing:border-box;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
 .stats{display:flex;flex-wrap:wrap;gap:24px 56px}
 .gcap{min-height:40px}
+.marker{background:linear-gradient(104deg,rgba(255,224,60,0) 0.6%,rgba(255,224,60,.75) 2.4%,rgba(255,226,80,.55) 52%,rgba(255,224,60,.8) 97.5%,rgba(255,224,60,0) 99%);padding:2px 5px;margin:0 -2px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:#2E2C29}
 @media (prefers-reduced-motion: reduce){.yearmeta svg,.allbtn svg{transition:none !important}}
 .gview{position:relative}
 .gstrip{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
@@ -195,7 +196,7 @@ header nav a{display:inline-block;padding:13px 0}
 <section id="top" style="padding: 72px 0 56px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <h1 class="hero-title" style="margin: 0; font-size: 76px; line-height: 80px; font-weight: 500; letter-spacing: -0.025em; max-width: 900px">Making places since <span style="font-size: 0.86em">2010</span>.</h1>
-<p style="margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: #5C5850"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #9C7A45; display: block; flex: 0 0 auto"></span><span style="color: #1E1D1B">SITE IN PROGRESS</span><span>Projects and images are still being added</span></p>
+<p style="margin: 0; display: flex; align-items: flex-start; gap: 10px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; line-height: 22px; letter-spacing: 0.04em; color: #5C5850"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #9C7A45; display: block; flex: 0 0 auto; margin-top: 7px"></span><span class="marker"><span style="color: #1E1D1B">SITE IN PROGRESS</span> · Projects and images are still being added</span></p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 16px">
 <div style="max-width: 600px"><button type="button" class="introbtn" aria-expanded="{{introExpanded}}" sc-camel-on-click="{{toggleIntro}}"><span>A note on the projects</span><span aria-hidden="true" style="font-size: 20px; line-height: 20px; width: 20px; text-align: center">{{introSign}}</span></button></div>
