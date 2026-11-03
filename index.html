@@ -311,17 +311,18 @@ class Component extends DCLogic {
     try {
       const h = decodeURIComponent((window.location.hash || '').slice(1));
       const name = h && this.slugToName[h];
-      if (name) this.setState({ open: name, imgIdx: 0, years: this.state.years ? { ...this.state.years, [this.nameToYear[name]]: true } : null });
+      if (name) { this.deepLink = true; } if (name) this.setState({ open: name, imgIdx: 0, years: this.state.years ? { ...this.state.years, [this.nameToYear[name]]: true } : null });
     } catch (e) {}
   }
   componentDidUpdate(prevProps, prevState) {
     const cur = this.state.open, was = prevState ? prevState.open : null;
+    if (cur !== was && this.anchor) { try { const ae = document.getElementById(this.anchor.id); if (ae) { const d = ae.getBoundingClientRect().top - this.anchor.top; if (Math.abs(d) > 1) window.scrollBy(0, d); } } catch (e) {} this.anchor = null; }
     if (cur && cur !== was) {
       const slug = this.nameToSlug[cur];
       try { history.replaceState(null, '', '#' + slug); } catch (e) {}
       try { (this.imgsByName && this.imgsByName[cur] || []).forEach((src) => { const im = new Image(); im.src = src; }); } catch (e) {}
       const el = document.getElementById(slug);
-      if (el) requestAnimationFrame(() => { try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} });
+      if (el && this.deepLink) { this.deepLink = false; requestAnimationFrame(() => { try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {} }); }
     } else if (!cur && was) {
       try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
     }
@@ -683,7 +684,7 @@ class Component extends DCLogic {
       isOpen: open === d.name,
       expanded: open === d.name ? 'true' : 'false',
       sign: open === d.name ? '−' : '+',
-      toggle: () => this.setState({ open: this.state.open === d.name ? null : d.name, imgIdx: 0, hover: null }),
+      toggle: (e) => { try { const it = e && e.currentTarget && e.currentTarget.closest('.item'); this.anchor = it ? { id: it.id, top: it.getBoundingClientRect().top } : null; } catch (err) { this.anchor = null; } this.setState({ open: this.state.open === d.name ? null : d.name, imgIdx: 0, hover: null }); },
       ...(() => {
         const imgs = DESC[d.name] && DESC[d.name].img ? DESC[d.name].img : [];
         this.imgsByName = this.imgsByName || {}; this.imgsByName[d.name] = imgs.map((x) => x.src);
