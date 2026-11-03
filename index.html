@@ -721,7 +721,7 @@ class Component extends DCLogic {
     items.forEach((it) => { (yearsMap[it.year] = yearsMap[it.year] || []).push(it); });
     let keys = Object.keys(yearsMap).map(Number).sort((a, b) => a - b);
     if (order === 'Newest first') keys = keys.reverse();
-    const yOpen = this.state.years || (keys.length ? { [Math.max(...keys)]: true } : {});
+    const yOpen = this.state.years ? { ...this.state.years } : {};
     if (this.state.open && this.nameToYear[this.state.open] != null && !this.state.years) yOpen[this.nameToYear[this.state.open]] = true;
     items.forEach((it) => { this.nameToYear[it.name] = it.year; });
     const years = keys.map((y) => ({
