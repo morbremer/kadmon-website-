@@ -5,6 +5,14 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="Projects by kadmon projects since 2010: old buildings given new uses, shared spaces and places that bring people together, developed, planned and run across Israel.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kadmonprojects.com/">
+<meta property="og:title" content="kadmon projects · Making places since 2010">
+<meta property="og:description" content="Old buildings given new uses, shared spaces and places that bring people together, since 2010.">
+<meta property="og:image" content="https://kadmonprojects.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/react.production.min.js"></script>
 <script src="assets/react-dom.production.min.js"></script>
@@ -107,13 +115,15 @@
 </style>
 <style>
 body{margin:0;background:#F5F3EE}
-a{color:#1E1D1B}a:hover{color:#8A6B3F}
+a{color:#1E1D1B}
+header nav a{display:inline-block;padding:13px 0}
+.datebtn{position:relative}.datebtn::after{content:'';position:absolute;inset:-14px}
+@media (max-width:760px){.row[aria-expanded="true"] .thumb{display:none}}
 .yb{display:flex;flex-wrap:wrap;gap:0 32px;border-top:1px solid #1E1D1B;padding:20px 0}
 .yearbtn{flex:0 0 100%;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .yearnum{font-family:"DM Mono",ui-monospace,monospace;font-size:40px;line-height:44px}
 .yearmeta{display:flex;align-items:center;gap:16px;font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.06em;color:#5C5850}
 .allbtn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;background:none;border:0;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer}
-.allbtn:hover span:first-child{text-decoration:underline;text-underline-offset:4px}
 .allbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yearbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .yb .rows{margin-left:182px;margin-top:8px}
@@ -126,7 +136,6 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 .panel{display:flex;flex-wrap:wrap;gap:24px 40px;padding:4px 0 32px}
 .ph{flex:1 1 300px;max-width:440px;aspect-ratio:4/3;background:#E7E3DA;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px}
 .introbtn{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:44px;padding:12px 0;background:none;border:0;border-top:1px solid #BDB7AB;border-bottom:1px solid #BDB7AB;font:500 13px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#1E1D1B;cursor:pointer;text-align:left}
-.introbtn:hover span:first-child{text-decoration:underline;text-underline-offset:4px}
 .introbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .gal{flex:1 1 300px;max-width:480px;min-width:0}
 .frame{aspect-ratio:4/3;background:#E7E3DA;overflow:hidden;display:flex;align-items:center;justify-content:center;width:100%;border:0;padding:0;margin:0;cursor:pointer}
@@ -195,7 +204,7 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 <button type="button" class="allbtn" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><span>{{allLabel}}</span><span aria-hidden="true" style="font-size: 18px; line-height: 18px; width: 18px; text-align: center">{{allSign}}</span></button>
 </div>
 <div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
-<div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
+<div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" class="datebtn" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
 <div class="rows" style="display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px 24px; align-items: center; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850">
 <div class="pname">PROJECT</div>
 <div class="status">STATUS</div>
@@ -234,7 +243,7 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 <sc-if value="{{p.hasImages}}" hint-placeholder-val="{{false}}">
 <div class="gal" style="{{p.galStyle}}" sc-camel-tab-index="0" aria-label="Gallery, use the arrow keys to move between images" sc-camel-on-key-down="{{p.galKey}}" sc-camel-on-touch-start="{{touchStart}}" sc-camel-on-touch-end="{{p.touchEnd}}">
 <button type="button" class="frame" aria-label="Next image" sc-camel-on-click="{{p.next}}">
-<img src="{{p.img}}" alt="{{p.imgAlt}}" style="{{p.imgStyle}}">
+<img loading="lazy" src="{{p.img}}" alt="{{p.imgAlt}}" style="{{p.imgStyle}}">
 </button>
 <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-top: 12px">
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; padding-top: 2px">
@@ -282,7 +291,7 @@ a{color:#1E1D1B}a:hover{color:#8A6B3F}
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;order&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Newest first&quot;,&quot;Oldest first&quot;],&quot;default&quot;:&quot;Newest first&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#9C7A45&quot;,&quot;#1E1D1B&quot;,&quot;#5F6B4E&quot;,&quot;#7A4A3A&quot;],&quot;default&quot;:&quot;#9C7A45&quot;},&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:2300}}">
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { filter: null, open: null, imgIdx: 0, intro: true, dateNote: false, hover: null, years: null }; this.slugToName = {}; this.nameToYear = {}; this.nameToSlug = {}; this.mx = 0; this.my = 0; this.pvEl = null; this.tx = null; }
+  constructor(props) { super(props); this.state = { filter: null, open: null, imgIdx: 0, intro: false, dateNote: false, hover: null, years: null }; this.slugToName = {}; this.nameToYear = {}; this.nameToSlug = {}; this.mx = 0; this.my = 0; this.pvEl = null; this.tx = null; }
   componentDidMount() {
     try {
       const h = decodeURIComponent((window.location.hash || '').slice(1));
@@ -647,7 +656,7 @@ class Component extends DCLogic {
       rowStyle: '',
       panelStyle: 'flex-direction: column; flex-wrap: nowrap',
       galStyle: 'flex: 0 0 auto; width: 100%; max-width: none',
-      thumbStyle: (open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src + '")' : ''),
+      thumbStyle: (open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src.replace("assets/photos/", "assets/photos/thumbs/") + '")' : ''),
       phases: PH.map((p) => ({ on: d.t.includes(p.k), off: !d.t.includes(p.k), dotStyle: p.k === 'own' ? dotOwn : dotOn })),
       isOpen: open === d.name,
       expanded: open === d.name ? 'true' : 'false',
@@ -691,7 +700,7 @@ class Component extends DCLogic {
     items.forEach((it) => { (yearsMap[it.year] = yearsMap[it.year] || []).push(it); });
     let keys = Object.keys(yearsMap).map(Number).sort((a, b) => a - b);
     if (order === 'Newest first') keys = keys.reverse();
-    const yOpen = this.state.years || Object.fromEntries(keys.map((y) => [y, true]));
+    const yOpen = this.state.years || (keys.length ? { [Math.max(...keys)]: true } : {});
     items.forEach((it) => { this.nameToYear[it.name] = it.year; });
     const years = keys.map((y) => ({
       year: y,
