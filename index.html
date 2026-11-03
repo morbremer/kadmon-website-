@@ -118,6 +118,8 @@ body{margin:0;background:#F5F3EE}
 a{color:#1E1D1B}
 header nav a{display:inline-block;padding:13px 0}
 footer a{display:inline-block;padding:12px 0;margin:-12px 0}
+.topbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.06em;color:#1E1D1B;text-decoration:none}
+.topbtn:focus-visible{outline:2px solid #1E1D1B;outline-offset:4px}
 .datebtn{position:relative}.datebtn::after{content:'';position:absolute;inset:-14px}
 @media (max-width:760px){.row[aria-expanded="true"] .thumb{display:none}}
 .yb{display:flex;flex-wrap:wrap;gap:0 32px;border-top:1px solid #1E1D1B;padding:20px 0}
@@ -220,7 +222,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 
 <section id="projects" aria-label="Projects timeline" style="padding-bottom: 96px">
 <div style="display: flex; justify-content: flex-end; padding-bottom: 8px">
-<button type="button" class="allbtn" aria-label="{{allLabel}}" title="{{allLabel}}" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><sc-if value="{{allIsOpen}}" hint-placeholder-val="{{false}}"><svg aria-hidden="true" width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: block"><path d="M7 4l5 5 5-5"></path><path d="M7 20l5-5 5 5"></path></svg></sc-if><sc-if value="{{allIsClosed}}" hint-placeholder-val="{{true}}"><svg aria-hidden="true" width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: block"><path d="M7 9l5-5 5 5"></path><path d="M7 15l5 5 5-5"></path></svg></sc-if></button>
+<button type="button" class="allbtn" aria-expanded="{{allExpanded}}" sc-camel-on-click="{{toggleAll}}"><span>{{allText}}</span></button>
 </div>
 <div class="yb colhead" style="border-top: 1px solid #1E1D1B; padding: 14px 0">
 <div class="yearcol" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #5C5850; display: flex; align-items: center; gap: 8px"><span>YEAR</span><button type="button" class="datebtn" aria-label="About the dates" aria-expanded="{{dateExpanded}}" aria-controls="datenote" sc-camel-on-click="{{toggleDate}}" style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #5C5850; background: {{dateBg}}; color: {{dateFg}}; font-family: Georgia, serif; font-style: italic; font-size: 10px; line-height: 14px; padding: 0; text-align: center; cursor: pointer">i</button></div>
@@ -296,6 +298,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 </sc-for>
 </section>
 
+<div style="display: flex; justify-content: flex-end; margin-top: -64px; padding: 0 0 24px"><a href="#top" class="topbtn" sc-camel-on-click="{{toTop}}">TOP <span aria-hidden="true">↑</span></a></div>
 <footer style="border-top: 1px solid #1E1D1B; padding: 32px 0 48px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em">
 <span style="display: flex; flex-direction: column; gap: 8px"><span>KADMON PROJECTS</span><span style="font-size: 12px; color: #5C5850">© 2026 Yoka Projects Ltd. All rights reserved.</span></span>
 <span style="display: flex; gap: 28px; flex-wrap: wrap">
@@ -746,7 +749,7 @@ class Component extends DCLogic {
       toggle: () => { const nx = { ...yOpen }; nx[y] = !nx[y]; this.setState({ years: nx }); }
     }));
     const allOpen = keys.length > 0 && keys.every((y) => yOpen[y]);
-    const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all years' : 'Open all years', allSign: allOpen ? '\u2212' : '+', allIsOpen: allOpen, allIsClosed: !allOpen, toggleAll: () => { if (allOpen) { this.setState({ years: {}, open: null }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
+    const allVals = { allExpanded: allOpen ? 'true' : 'false', allLabel: allOpen ? 'Close all years' : 'Open all years', allSign: allOpen ? '\u2212' : '+', allIsOpen: allOpen, allIsClosed: !allOpen, allText: allOpen ? 'Close all' : 'Open all', toggleAll: () => { if (allOpen) { this.setState({ years: {}, open: null }); } else { const nx = {}; keys.forEach((y) => { nx[y] = true; }); this.setState({ years: nx }); } } };
     const legend = PH.map((p, i) => {
       const on = filter === p.k;
       return {
@@ -771,6 +774,7 @@ class Component extends DCLogic {
       ...allVals,
       dateOpen, dateExpanded: dateOpen ? 'true' : 'false', dateBg: dateOpen ? '#5C5850' : 'transparent', dateFg: dateOpen ? '#F4F1EA' : '#5C5850', toggleDate: () => this.setState({ dateNote: !this.state.dateNote }),
       touchStart: (e) => { const t = e.touches && e.touches[0]; this.tx = t ? t.clientX : null; },
+      toTop: (e) => { try { e.preventDefault(); const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); history.replaceState(null, '', window.location.pathname + window.location.search); } catch (err) {} },
       years, legend, stats, introOpen, introExpanded: introOpen ? 'true' : 'false', introSign: introOpen ? '−' : '+', toggleIntro: () => this.setState({ intro: !this.state.intro }) };
   }
 }
