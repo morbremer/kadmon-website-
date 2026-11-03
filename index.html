@@ -684,7 +684,7 @@ class Component extends DCLogic {
       rowStyle: '',
       panelStyle: 'flex-direction: column; flex-wrap: nowrap',
       galStyle: 'flex: 0 0 auto; width: 100%; max-width: none',
-      thumbStyle: (open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src.replace("assets/photos/", "assets/photos/thumbs/") + '")' : ''),
+      thumbStyle: (open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src.replace("assets/photos/", "assets/photos/thumbs/") + '")' : 'display: none'),
       phases: PH.map((p) => ({ on: d.t.includes(p.k), off: !d.t.includes(p.k), dotStyle: p.k === 'own' ? dotOwn : dotOn })),
       isOpen: open === d.name,
       expanded: open === d.name ? 'true' : 'false',
