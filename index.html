@@ -69,6 +69,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 .pname{min-width:0;display:flex;gap:0;align-items:flex-start}
 .thumb{flex:0 0 150px;width:150px;margin:0 32px 0 -182px;aspect-ratio:4/3;border:1px solid #BDB7AB;box-sizing:border-box;overflow:hidden;display:block}
 .thumb{background-size:cover;background-position:center;background-repeat:no-repeat}
+.tthumb{display:none}
 .strip{display:grid;grid-template-columns:repeat(6, 64px);align-items:center}
 .cell{display:flex;justify-content:center;align-items:center;height:20px}
 .status{width:100%;display:flex;align-items:center;gap:8px;min-height:28px}
@@ -86,7 +87,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 .garrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;padding:0;background:rgba(245,243,238,.85);color:#1E1D1B;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .garrow:focus-visible{outline:2px solid #1E1D1B;outline-offset:2px}
 .gprev{left:12px}.gnext{right:12px}
-@media (min-width:761px) and (max-width:1100px){.yearcol{flex-basis:64px}.yb .rows{margin-left:96px}.colhead .rows{margin-left:0}.row{grid-template-columns:minmax(0,1fr) 150px}.colhead .rows{grid-template-columns:minmax(0,1fr) 150px !important}}
+@media (min-width:761px) and (max-width:1100px){.yearcol{flex-basis:64px}.yb .rows{margin-left:96px}.colhead .rows{margin-left:0}.row{grid-template-columns:minmax(0,1fr) 150px}.colhead .rows{grid-template-columns:minmax(0,1fr) 150px !important}.tthumb{display:block;flex:0 0 128px;width:128px;aspect-ratio:4/3;margin:2px 20px 0 0;border:1px solid #BDB7AB;box-sizing:border-box;background-size:cover;background-position:center;background-repeat:no-repeat}}
 @media (max-width:760px){
 .gcap{min-height:60px}
 .garrow{display:none}
@@ -165,6 +166,7 @@ footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 <div class="item" id="{{p.slug}}" style="{{p.rowStyle}}">
 <button type="button" class="row" aria-expanded="{{p.expanded}}" sc-camel-on-click="{{p.toggle}}">
 <div class="pname">
+<span class="tthumb" aria-hidden="true" style="{{p.tabThumb}}"></span>
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 auto">
 <span class="pn" style="font-size: 22px; line-height: 28px; font-weight: 500">{{p.title}}</span>
 <span style="font-size: 14px; color: #5C5850; display: flex; align-items: center; gap: 8px; flex-wrap: wrap">{{p.place}}<sc-if value="{{p.hasImages}}" hint-placeholder-val="{{false}}"><svg role="img" aria-label="Has images" width="15" height="15" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex: 0 0 auto; opacity: .75"><title>Has images</title><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><circle cx="8.5" cy="10" r="1.5"></circle><path d="M21 16l-5-5-8 8"></path></svg></sc-if></span>
@@ -608,6 +610,7 @@ class Component extends DCLogic {
       panelStyle: 'flex-direction: column; flex-wrap: nowrap',
       galStyle: 'flex: 0 0 auto; width: 100%; max-width: none',
       thumbStyle: (open === d.name) ? 'visibility: hidden' : ((DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src.replace("assets/photos/", "assets/photos/thumbs/") + '")' : 'display: none'),
+      tabThumb: (open !== d.name && DESC[d.name] && DESC[d.name].img && DESC[d.name].img[0]) ? 'background-image: url("' + DESC[d.name].img[0].src.replace("assets/photos/", "assets/photos/thumbs/") + '")' : 'visibility: hidden',
       phases: PH.map((p) => ({ on: d.t.includes(p.k), off: !d.t.includes(p.k), dotStyle: p.k === 'own' ? dotOwn : dotOn })),
       isOpen: open === d.name,
       expanded: open === d.name ? 'true' : 'false',
