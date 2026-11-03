@@ -114,9 +114,11 @@ footer a{text-decoration:none}
 <h2 class="label" id="contact-label">CONTACT</h2>
 <div class="body">
 <p class="lede">Tell us about your place or project, and we will get back to you.</p>
-<form name="contact" method="POST" action="/contact" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-<input type="hidden" name="form-name" value="contact">
-<p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<form name="contact" method="POST" action="https://api.web3forms.com/submit" novalidate>
+<input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+<input type="hidden" name="subject" value="New inquiry from kadmonprojects.com">
+<input type="hidden" name="from_name" value="kadmon projects website">
+<p class="hp" aria-hidden="true"><label>Leave this empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></p>
 <label class="field" for="contact-email"><span>YOUR EMAIL</span><input id="contact-email" name="email" type="email" required autocomplete="email" placeholder="name@example.com"></label>
 <label class="field" for="contact-message"><span>YOUR INQUIRY</span><textarea id="contact-message" name="message" required rows="7" placeholder="What are you working on?"></textarea></label>
 <p class="notice">We use your details only to reply to you. See our <a href="/privacy">privacy policy</a>.</p>
@@ -153,12 +155,13 @@ footer a{text-decoration:none}
     if (!live) { setStatus('Preview only: the form sends on the live site.', false); return; }
     btn.disabled = true;
     setStatus('Sending…', false);
-    fetch('/', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
     }).then(function (r) {
-      if (!r.ok) throw new Error(r.status);
+      return r.json().then(function (d) { if (!r.ok || !d.success) throw new Error(d.message || r.status); });
+    }).then(function () {
       form.reset();
       setStatus('Thank you. Your message was sent, and we will reply by email.', false);
     }).catch(function () {
